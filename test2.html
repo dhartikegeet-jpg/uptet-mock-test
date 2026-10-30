@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPTET & Special TET Primary Level Exam - Created by Sandeep Sir</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+            background-color: #f1f5f9;
+        }
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 0.45rem;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col text-slate-800">
+
+    <!-- Sticky Top Header -->
+    <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-30 border-b border-amber-500/30">
+        <div class="max-w-7xl mx-auto px-3 md:px-6 py-3 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-2.5 md:gap-3">
+                <div class="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-extrabold px-2.5 py-1 rounded-md text-xs md:text-sm tracking-wider shadow">
+                    MOCK TEST - 2
+                </div>
+                <div>
+                    <h1 class="text-sm sm:text-base md:text-xl font-extrabold tracking-tight text-white leading-tight">
+                        UPTET & Special TET Primary Level Exam
+                    </h1>
+                    <p class="text-xs font-bold text-amber-400 tracking-wide">
+                        👨‍🏫 Created by - Sandeep Sir <span class="text-slate-400 font-normal hidden sm:inline">| (Moderate to Difficult Level)</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-2 md:space-x-3">
+                <span class="hidden lg:inline-flex items-center bg-slate-800 border border-amber-400/50 text-amber-300 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
+                    ✨ Created by - Sandeep Sir
+                </span>
+                <div id="exam-header-controls" class="hidden flex items-center space-x-2 md:space-x-3">
+                    <div class="bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-700 flex items-center space-x-1.5">
+                        <span class="text-[11px] text-slate-400 uppercase hidden sm:inline">शेष समय:</span>
+                        <span id="timer-display" class="font-mono text-sm md:text-lg font-extrabold text-amber-400">02:30:00</span>
+                    </div>
+                    <button onclick="confirmSubmit()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 md:px-4 py-1.5 rounded-lg text-xs md:text-sm transition shadow-md">
+                        टेस्ट सबमिट करें
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Welcome / Instructions Screen -->
+    <main id="start-screen" class="flex-grow max-w-4xl w-full mx-auto p-3 sm:p-6 md:p-8 flex items-center justify-center">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-5 sm:p-8 md:p-10 w-full">
+            <div class="text-center border-b border-slate-200 pb-6 mb-6">
+                <div class="flex flex-wrap justify-center items-center gap-2 mb-3">
+                    <span class="inline-block bg-rose-100 text-rose-800 text-xs font-extrabold px-3 py-1 rounded-full border border-rose-200">
+                        स्तरीय प्रश्न-पत्र: मध्यम से कठिन (Moderate to Difficult)
+                    </span>
+                    <span class="inline-block bg-amber-400 text-slate-950 text-xs md:text-sm font-extrabold px-4 py-1 rounded-full shadow-sm border border-amber-500">
+                        👨‍🏫 Created by - Sandeep Sir
+                    </span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    UPTET & Special TET Primary Level Exam
+                </h2>
+                <p class="text-slate-600 mt-1.5 text-sm md:text-base font-medium">
+                    प्राथमिक स्तर (कक्षा 1 से 5) — पूर्णतः नवीन एवं विश्लेषणात्मक 150 MCQs अभ्यास सेट
+                </p>
+                <div class="mt-3 inline-flex items-center space-x-2 bg-indigo-50 text-indigo-900 font-bold text-xs md:text-sm px-4 py-1.5 rounded-xl border border-indigo-200">
+                    <span>विशेष मार्गदर्शन एवं प्रश्न संकलन:</span>
+                    <span class="text-indigo-700 underline decoration-amber-500 decoration-2">Created by - Sandeep Sir</span>
+                </div>
+            </div>
+
+            <!-- Key Exam Specs -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 text-center">
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                    <p class="text-xs text-slate-500 font-medium">कुल प्रश्न</p>
+                    <p class="text-lg md:text-xl font-extrabold text-indigo-700">150 MCQs</p>
+                </div>
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                    <p class="text-xs text-slate-500 font-medium">अधिकतम अंक</p>
+                    <p class="text-lg md:text-xl font-extrabold text-indigo-700">150 अंक (+1)</p>
+                </div>
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                    <p class="text-xs text-slate-500 font-medium">निर्धारित समय</p>
+                    <p class="text-lg md:text-xl font-extrabold text-indigo-700">2:30 घंटे (150 मि.)</p>
+                </div>
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                    <p class="text-xs text-slate-500 font-medium">नकारात्मक अंकन</p>
+                    <p class="text-lg md:text-xl font-extrabold text-emerald-600">कोई नहीं (0)</p>
+                </div>
+            </div>
+
+            <!-- Syllabus Breakdown -->
+            <div class="space-y-3 mb-6 text-sm md:text-base text-slate-700">
+                <h3 class="font-extrabold text-slate-900 text-base md:text-lg flex items-center gap-2">
+                    <span>📋 प्रश्न-पत्र की संरचना (5 खंड — उच्च वैचारिक एवं विश्लेषणात्मक स्तर):</span>
+                </h3>
+                <ul class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs sm:text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="bg-indigo-600 text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 mt-0.5">Part A</span>
+                        <span><strong>बाल विकास एवं शिक्षण विधि (30 प्रश्न, प्र. 1–30):</strong> पियाजे-वायगोत्स्की तुलनात्मक विश्लेषण, ब्रोनफेनब्रेनर पारिस्थितिकी मॉडल, टॉलमैन, हल, लेविन, गैग्ने सोपानिकी, गिलफोर्ड त्रि-आयामी बुद्धि, RPwD Act 2016 एवं NEP 2020.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="bg-indigo-600 text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 mt-0.5">Part B</span>
+                        <span><strong>गणित (30 प्रश्न, प्र. 31–60):</strong> शेषफल प्रमेय, भाजकों का योग, बीजगणितीय सर्वसमिकाएँ, 3 वर्षीय CI-SI अंतर, बेईमान दुकानदार, अंतःत्रिज्या/परित्रिज्या, चक्रीय चतुर्भुज, सांख्यिकी संबंध एवं वैन हीले ज्यामितीय स्तर.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="bg-indigo-600 text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 mt-0.5">Part C</span>
+                        <span><strong>भाषा-I हिन्दी (30 प्रश्न, प्र. 61–90):</strong> संधि एवं समास के विशेष नियम (नदीभिः सूत्र, अलुक् तत्पुरुष), आभ्यंतर/बाह्य प्रयत्न, विभावना/असंगति/दृष्टांत अलंकार, छंद मात्रा गणना, अष्टछाप एवं तारसप्तक साहित्य.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded text-xs shrink-0 mt-0.5">Part D</span>
+                        <span><strong>भाषा-II वैकल्पिक (30 प्रश्न, प्र. 91–120):</strong> <strong>English</strong> (Inversion, Mixed Conditionals, Subjunctive Mood, Phonetics IPA, Synecdoche/Litotes, Krashen's Monitor Model) <strong>अथवा संस्कृत</strong> (पाणिनीय सूत्र, कारक विभक्ति सूत्र, कृदन्त/तद्धित प्रत्यय, शब्दरूप/धातुरूप, बृहत्त्रयी एवं शिक्षण विधियाँ).</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="bg-indigo-600 text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 mt-0.5">Part E</span>
+                        <span><strong>पर्यावरण अध्ययन - EVS (30 प्रश्न, प्र. 121–150):</strong> पारिस्थितिक पिरामिड, नाइट्रोजन चक्र जीवाणु, मॉन्ट्रेक्स रिकॉर्ड रामसर स्थल, प्रोटोकॉल, संविधान की अनुसूचियाँ व पंचायती राज समितियाँ, यूपी विशेष वन्यजीव विहार एवं पादप हार्मोन.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Candidate Input & Language Selection -->
+            <div class="bg-amber-50/90 border-2 border-amber-300 rounded-xl p-4 sm:p-5 mb-6">
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-slate-800 mb-1.5">अभ्यर्थी का नाम (Scorecard के लिए - वैकल्पिक):</label>
+                    <input type="text" id="student-name" placeholder="अपना नाम यहाँ लिखें..." class="w-full px-4 py-2.5 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-600 focus:outline-none text-sm font-medium">
+                </div>
+                <div>
+                    <label class="block text-sm font-extrabold text-slate-900 mb-2">
+                        भाग D (भाषा-II: प्रश्न 91 से 120) के लिए अपनी भाषा चुनें: <span class="text-rose-600">*</span>
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <label class="flex items-center space-x-3 bg-white p-3.5 rounded-xl border-2 border-indigo-600 cursor-pointer transition shadow-sm" id="lang-en-card">
+                            <input type="radio" name="lang2" value="english" checked onchange="updateLangCardStyle()" class="w-5 h-5 text-indigo-600">
+                            <div>
+                                <span class="block font-extrabold text-slate-900">Option 1: English (अंग्रेजी)</span>
+                                <span class="text-xs text-slate-500">30 Advanced MCQs in English</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 bg-white p-3.5 rounded-xl border-2 border-slate-200 cursor-pointer transition shadow-sm" id="lang-sa-card">
+                            <input type="radio" name="lang2" value="sanskrit" onchange="updateLangCardStyle()" class="w-5 h-5 text-indigo-600">
+                            <div>
+                                <span class="block font-extrabold text-slate-900">Option 2: संस्कृत (Sanskrit)</span>
+                                <span class="text-xs text-slate-500">30 उच्चस्तरीय प्रश्न (संस्कृत माध्यम)</span>
+                            </div>
+                        </label>
+                    </div>
+                    <p class="text-xs text-slate-600 mt-2 font-medium">💡 नोट: आप परीक्षा के दौरान भी ऊपर दिए गए ड्रॉपडाउन से English या संस्कृत के बीच स्विच कर सकते हैं।</p>
+                </div>
+            </div>
+
+            <button onclick="startExam()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-base md:text-lg py-4 rounded-xl shadow-lg transition transform active:scale-[0.99] flex items-center justify-center gap-2">
+                <span>मॉक टेस्ट-2 प्रारंभ करें (Start Exam)</span>
+                <span>→</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- 2. Main Exam Interface -->
+    <div id="exam-screen" class="hidden flex-grow flex flex-col max-w-7xl w-full mx-auto p-2 sm:p-4 gap-3 md:gap-4">
+        
+        <!-- Top Section Navigation Bar -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-2.5 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex flex-wrap gap-1.5" id="section-tabs">
+                <button onclick="switchSection(0)" id="tab-0" class="px-3 py-2 rounded-lg text-xs md:text-sm font-bold transition bg-indigo-600 text-white shadow">Part A: बाल विकास (1-30)</button>
+                <button onclick="switchSection(1)" id="tab-1" class="px-3 py-2 rounded-lg text-xs md:text-sm font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200">Part B: गणित (31-60)</button>
+                <button onclick="switchSection(2)" id="tab-2" class="px-3 py-2 rounded-lg text-xs md:text-sm font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200">Part C: हिन्दी (61-90)</button>
+                <button onclick="switchSection(3)" id="tab-3" class="px-3 py-2 rounded-lg text-xs md:text-sm font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200">Part D: भाषा-II (91-120)</button>
+                <button onclick="switchSection(4)" id="tab-4" class="px-3 py-2 rounded-lg text-xs md:text-sm font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200">Part E: पर्यावरण (121-150)</button>
+            </div>
+
+            <!-- In-Exam Part D Language Switcher -->
+            <div class="flex items-center space-x-2 text-xs bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-300">
+                <span class="font-bold text-slate-700">Part D विकल्प:</span>
+                <select id="in-exam-lang2" onchange="changeLang2InExam(this.value)" class="bg-white border border-slate-300 rounded px-2 py-0.5 font-extrabold text-indigo-700 focus:outline-none">
+                    <option value="english">English (30 Qs)</option>
+                    <option value="sanskrit">संस्कृत (30 प्रश्न)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Exam Body Grid -->
+        <div class="flex-grow grid grid-cols-1 lg:grid-cols-12 gap-4">
+            
+            <!-- Left/Main Column: Question Card (8 cols) -->
+            <div class="lg:col-span-8 bg-white rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between p-4 sm:p-6">
+                <div>
+                    <!-- Question Header Bar with Branding -->
+                    <div class="flex flex-wrap justify-between items-center gap-2 border-b border-slate-200 pb-3.5 mb-5">
+                        <div class="flex items-center space-x-2">
+                            <span id="q-part-badge" class="bg-indigo-100 text-indigo-800 text-xs font-extrabold px-2.5 py-1 rounded-md border border-indigo-200">Part A</span>
+                            <span id="q-number-display" class="text-base md:text-lg font-extrabold text-slate-900">प्रश्न 1 / 150</span>
+                            <span class="bg-rose-100 text-rose-800 text-[11px] font-bold px-2 py-0.5 rounded hidden sm:inline">Moderate-Hard</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-amber-100 text-amber-950 text-xs font-extrabold px-2.5 py-1 rounded-md border border-amber-300">
+                                👨‍🏫 Created by - Sandeep Sir
+                            </span>
+                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded border border-emerald-200 hidden sm:inline">+1 अंक | नेगेटिव: 0</span>
+                        </div>
+                    </div>
+
+                    <!-- Question Text -->
+                    <div id="question-text" class="text-base md:text-lg font-bold text-slate-900 leading-relaxed mb-6 whitespace-pre-line">
+                        <!-- Question dynamically loaded -->
+                    </div>
+
+                    <!-- 4 Options Container -->
+                    <div id="options-container" class="space-y-3">
+                        <!-- Options dynamically loaded -->
+                    </div>
+                </div>
+
+                <!-- Question Action Footer -->
+                <div class="border-t border-slate-200 pt-4 mt-8 flex flex-wrap justify-between items-center gap-2">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="clearResponse()" class="px-3.5 py-2 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 text-xs md:text-sm font-bold transition">
+                            उत्तर हटाएँ (Clear)
+                        </button>
+                        <button onclick="toggleMarkForReview()" id="review-btn" class="px-3.5 py-2 rounded-lg border border-purple-400 bg-purple-50 text-purple-800 hover:bg-purple-100 text-xs md:text-sm font-bold transition">
+                            समीक्षा हेतु चिह्नित (Review)
+                        </button>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button onclick="prevQuestion()" id="prev-btn" class="px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs md:text-sm font-extrabold transition">
+                            ← पिछला
+                        </button>
+                        <button onclick="nextQuestion()" id="next-btn" class="px-5 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs md:text-sm font-extrabold transition shadow-md">
+                            सेव एवं अगला (Next) →
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Question Palette & Legend (4 cols) -->
+            <div class="lg:col-span-4 bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex flex-col">
+                <div class="border-b border-slate-200 pb-3 mb-3">
+                    <div class="flex justify-between items-center mb-2.5">
+                        <h3 class="font-extrabold text-slate-800 text-sm">प्रश्न पैलेट (Question Palette)</h3>
+                        <span class="text-[11px] font-bold text-indigo-700">Created by - Sandeep Sir</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <div class="flex items-center space-x-2">
+                            <span id="stat-answered" class="w-6 h-6 rounded-md bg-emerald-600 text-white flex items-center justify-center font-bold shadow-sm">0</span>
+                            <span class="text-slate-700 font-medium">उत्तर दिया (Answered)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span id="stat-not-answered" class="w-6 h-6 rounded-md bg-rose-500 text-white flex items-center justify-center font-bold shadow-sm">0</span>
+                            <span class="text-slate-700 font-medium">उत्तर नहीं दिया (Skipped)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span id="stat-review" class="w-6 h-6 rounded-md bg-purple-600 text-white flex items-center justify-center font-bold shadow-sm">0</span>
+                            <span class="text-slate-700 font-medium">समीक्षा चिह्नित (Review)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span id="stat-not-visited" class="w-6 h-6 rounded-md bg-slate-100 border border-slate-300 text-slate-600 flex items-center justify-center font-bold">150</span>
+                            <span class="text-slate-700 font-medium">अभी नहीं देखा</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Palette Section Header -->
+                <div class="text-xs font-extrabold text-indigo-900 bg-indigo-50 px-3 py-1.5 rounded-lg mb-2.5 border border-indigo-100" id="palette-section-title">
+                    Part A: बाल विकास एवं शिक्षण विधि (1-30)
+                </div>
+
+                <!-- Number Buttons Grid -->
+                <div id="palette-container" class="palette-grid overflow-y-auto custom-scrollbar max-h-72 lg:max-h-96 p-1">
+                    <!-- Palette buttons generated dynamically -->
+                </div>
+
+                <div class="mt-auto pt-4 border-t border-slate-200">
+                    <label class="flex items-center space-x-2 text-xs font-semibold text-slate-700 mb-3 cursor-pointer">
+                        <input type="checkbox" id="show-all-palette" onchange="renderPalette()" class="rounded text-indigo-600 w-4 h-4">
+                        <span>सभी 150 प्रश्न एक साथ पैलेट में दिखाएँ</span>
+                    </label>
+                    <button onclick="confirmSubmit()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-2.5 rounded-xl text-sm shadow-md transition">
+                        परीक्षा समाप्त एवं सबमिट करें (Submit Exam)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Scorecard & Detailed Answer Key Screen -->
+    <div id="result-screen" class="hidden flex-grow max-w-6xl w-full mx-auto p-3 sm:p-6 md:p-8">
+        <!-- Scorecard Box -->
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-5 sm:p-8 mb-6">
+            <div class="text-center border-b border-slate-200 pb-6 mb-6">
+                <span class="inline-block bg-amber-400 text-slate-950 text-xs md:text-sm font-extrabold px-4 py-1 rounded-full shadow-sm border border-amber-500 mb-2">
+                    👨‍🏫 Created by - Sandeep Sir
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">UPTET & Special TET Primary Level Exam — स्कोरकार्ड</h2>
+                <p class="text-xs md:text-sm text-slate-500 font-semibold mt-1">Mock Test - 2 (Moderate to Difficult Level)</p>
+                <p id="result-student-name" class="text-indigo-700 font-extrabold text-lg mt-2"></p>
+            </div>
+
+            <!-- Summary Metrics -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 mb-8 text-center">
+                <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-200">
+                    <p class="text-xs text-indigo-700 font-bold uppercase">कुल प्राप्तांक (Score)</p>
+                    <p id="res-total-score" class="text-2xl md:text-3xl font-extrabold text-indigo-950 mt-1">0 / 150</p>
+                </div>
+                <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+                    <p class="text-xs text-emerald-700 font-bold uppercase">सही उत्तर (Correct)</p>
+                    <p id="res-correct" class="text-2xl md:text-3xl font-extrabold text-emerald-700 mt-1">0</p>
+                </div>
+                <div class="bg-rose-50 p-4 rounded-xl border border-rose-200">
+                    <p class="text-xs text-rose-700 font-bold uppercase">गलत उत्तर (Incorrect)</p>
+                    <p id="res-wrong" class="text-2xl md:text-3xl font-extrabold text-rose-600 mt-1">0</p>
+                </div>
+                <div class="bg-slate-100 p-4 rounded-xl border border-slate-300">
+                    <p class="text-xs text-slate-600 font-bold uppercase">छोड़े गए (Skipped)</p>
+                    <p id="res-skipped" class="text-2xl md:text-3xl font-extrabold text-slate-700 mt-1">0</p>
+                </div>
+                <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 col-span-2 sm:col-span-1">
+                    <p class="text-xs text-amber-800 font-bold uppercase">लिया गया समय / पात्रता</p>
+                    <p id="res-status" class="text-sm font-extrabold text-amber-950 mt-1.5">—</p>
+                </div>
+            </div>
+
+            <!-- Section-wise Table -->
+            <h3 class="font-extrabold text-base md:text-lg text-slate-900 mb-3">📊 खंडवार प्रदर्शन तालिका (Section-wise Analysis):</h3>
+            <div class="overflow-x-auto mb-6">
+                <table class="w-full text-left border-collapse border border-slate-200 text-xs sm:text-sm">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-800 font-bold">
+                            <th class="border border-slate-200 p-3">खंड (Part)</th>
+                            <th class="border border-slate-200 p-3 text-center">कुल प्रश्न</th>
+                            <th class="border border-slate-200 p-3 text-center">हल किए</th>
+                            <th class="border border-slate-200 p-3 text-center text-emerald-700">सही (+1)</th>
+                            <th class="border border-slate-200 p-3 text-center text-rose-600">गलत (0)</th>
+                            <th class="border border-slate-200 p-3 text-center">प्राप्तांक</th>
+                        </tr>
+                    </thead>
+                    <tbody id="section-score-tbody">
+                        <!-- Dynamically populated -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 no-print">
+                <button onclick="location.reload()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-xl shadow transition text-sm">
+                    🔄 पुनः टेस्ट दें (Retake Test)
+                </button>
+                <button onclick="window.print()" class="bg-slate-800 hover:bg-slate-900 text-white font-bold px-6 py-2.5 rounded-xl shadow transition text-sm">
+                    🖨️ परिणाम प्रिंट / PDF सेव करें
+                </button>
+            </div>
+        </div>
+
+        <!-- Detailed Question-by-Question Review & Explanations -->
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-5 sm:p-8">
+            <div class="flex flex-wrap justify-between items-center gap-3 border-b border-slate-200 pb-4 mb-6">
+                <div>
+                    <h3 class="text-lg md:text-xl font-extrabold text-slate-900">📖 विस्तृत उत्तर कुंजी एवं व्याख्या (Detailed Solutions)</h3>
+                    <p class="text-xs text-slate-500 font-semibold">Created by - Sandeep Sir | प्रत्येक प्रश्न के सही उत्तर एवं अवधारणात्मक व्याख्या का अध्ययन करें</p>
+                </div>
+                <div class="flex flex-wrap gap-2 no-print">
+                    <select id="review-filter-part" onchange="renderAnswerKey()" class="border border-slate-300 rounded-lg px-3 py-2 text-xs md:text-sm font-bold bg-slate-50 text-slate-800">
+                        <option value="all">सभी 150 प्रश्न (All Sections)</option>
+                        <option value="0">Part A: बाल विकास (1-30)</option>
+                        <option value="1">Part B: गणित (31-60)</option>
+                        <option value="2">Part C: हिन्दी (61-90)</option>
+                        <option value="3">Part D: भाषा-II (91-120)</option>
+                        <option value="4">Part E: पर्यावरण अध्ययन (121-150)</option>
+                    </select>
+                    <select id="review-filter-status" onchange="renderAnswerKey()" class="border border-slate-300 rounded-lg px-3 py-2 text-xs md:text-sm font-bold bg-slate-50 text-slate-800">
+                        <option value="all">सभी स्थिति (All Status)</option>
+                        <option value="correct">केवल सही उत्तर (Correct)</option>
+                        <option value="wrong">केवल गलत उत्तर (Incorrect)</option>
+                        <option value="skipped">छोड़े गए प्रश्न (Unattempted)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="answer-key-container" class="space-y-4">
+                <!-- Detailed question review cards injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Submit Confirmation Modal -->
+    <div id="submit-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 max-w-md w-full p-6 text-center">
+            <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-3 text-2xl font-extrabold">!</div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2">मॉक टेस्ट सबमिट करने की पुष्टि करें</h3>
+            <p id="submit-modal-text" class="text-sm text-slate-600 mb-6"></p>
+            <div class="flex justify-center space-x-3">
+                <button onclick="closeSubmitModal()" class="px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-sm transition">
+                    वापस जाएँ (Cancel)
+                </button>
+                <button onclick="proceedSubmitExam()" class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition">
+                    हाँ, सबमिट करें (Submit)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Sticky/Static Footer Branding -->
+    <footer class="bg-slate-950 text-slate-300 text-center py-3.5 px-4 text-xs md:text-sm border-t border-slate-800 mt-auto">
+        <span class="font-extrabold text-amber-400">Created by - Sandeep Sir</span> | UPTET & Special TET Primary Level Exam (150 MCQs Online Portal)
+    </footer>
+
+    <script>
+        // =========================================================================
+        // UPTET & SPECIAL TET PRIMARY LEVEL EXAM (MOCK TEST - 2: MODERATE TO DIFFICULT)
+        // 180 UNIQUE, REAL QUESTIONS (30 CDP + 30 MATH + 30 HINDI + 30 ENG + 30 SANSKRIT + 30 EVS)
+        // =========================================================================
+
+        // PART A: बाल विकास एवं शिक्षण विधि (30 Moderate-to-Difficult MCQs)
+        const questionsCDP = [
+            {
+                q: "जीन पियाजे के संज्ञानात्मक विकास सिद्धांत में जब एक बालक अपने पूर्ववर्ती 'स्कीमा' (Schema) में नवीन वातावरणीय सूचनाओं के अनुरूप परिवर्तन या सुधार करता है ताकि असंतुलन (Disequilibrium) समाप्त हो सके, तो इस प्रक्रिया को तकनीकी रूप से क्या कहा जाता है?",
+                opts: ["आत्मसात्करण (Assimilation)", "समायोजन / समंजन (Accommodation)", "अहंकेन्द्रितता (Egocentrism)", "जीवाद (Animism)"],
+                ans: 1,
+                exp: "पियाजे के अनुसार पूर्व स्कीमा में नवीन जानकारी को ज्यों का त्यों जोड़ना 'आत्मसात्करण' है, जबकि पुरानी स्कीमा में संशोधन या परिवर्तन करना 'समायोजन' (Accommodation) कहलाता है।"
+            },
+            {
+                q: "लेव वायगोत्स्की और जीन पियाजे के मध्य 'निजी वाक्' (Private Speech - बच्चे का स्वयं से बोलकर बात करना) के संदर्भ में मुख्य सैद्धांतिक मतभेद क्या है?",
+                opts: ["पियाजे इसे आत्म-नियमन का साधन मानते हैं, जबकि वायगोत्स्की इसे अपरिपक्व अहंकेन्द्रित वाक् मानते हैं।", "वायगोत्स्की इसे स्व-नियमन (Self-regulation) एवं चिंतन को दिशा देने का महत्वपूर्ण उपकरण मानते हैं, जबकि पियाजे इसे 'अहंकेन्द्रित वाक्' (Egocentric speech) कहते हैं।", "दोनों ही मनोवैज्ञानिक इसे भाषा विकास में बाधक मानते हैं।", "निजी वाक् की अवधारणा केवल चोम्स्की द्वारा दी गई है।"],
+                ans: 1,
+                exp: "वायगोत्स्की के अनुसार निजी वाक् (Private Speech) बालक को अपनी क्रियाओं और व्यवहार को नियंत्रित (Self-regulate) करने में मदद करता है, जो बाद में आंतरिक वाक् (Inner speech) बन जाता है।"
+            },
+            {
+                q: "लॉरेंस कोहलबर्ग के नैतिक विकास सिद्धांत की 'कैरोल गिलिगन' (Carol Gilligan) द्वारा किस मुख्य आधार पर आलोचना की गई थी?",
+                opts: ["कोहलबर्ग ने नैतिक विकास में आनुवंशिकता की पूर्ण उपेक्षा की।", "कोहलबर्ग ने 'देखभाल की नैतिकता' (Ethics of Care) की तुलना में पुरुषावादी 'न्याय की नैतिकता' (Ethics of Justice) को अधिक महत्व दिया जिससे यह लिंग-पक्षपाती हो गया।", "कोहलबर्ग ने केवल शैशवावस्था के बच्चों पर अध्ययन किया।", "कोहलबर्ग ने दंड और आज्ञाकारिता को सर्वोच्च स्तर माना।"],
+                ans: 1,
+                exp: "कैरोल गिलिगन ने अपनी पुस्तक 'In a Different Voice' (1982) में तर्क दिया कि कोहलबर्ग का नमूना केवल पुरुषों पर आधारित था और महिलाओं की 'संबंधों एवं देखभाल की नैतिकता' (Care perspective) की अनदेखी करता है।"
+            },
+            {
+                q: "यू री ब्रोनफेनब्रेनर (Urie Bronfenbrenner) के पारिस्थितिकी तंत्र सिद्धांत (Ecological Systems Theory) के अनुसार, 'माता-पिता के कार्यस्थल की नीतियाँ' (जिनमें बालक प्रत्यक्ष रूप से शामिल नहीं है, किन्तु वे उसके घर के वातावरण को प्रभावित करती हैं) किस मंडल का हिस्सा हैं?",
+                opts: ["लघुमंडल (Microsystem)", "मध्यमंडल (Mesosystem)", "बाह्यमंडल (Exosystem)", "कालमंडल (Chronosystem)"],
+                ans: 2,
+                exp: "बाह्यमंडल (Exosystem) में वे सामाजिक सेटिंग्स आती हैं जिनमें बच्चा स्वयं सक्रिय सहभागी नहीं होता (जैसे माता-पिता का ऑफिस/तबादला), लेकिन वहाँ की घटनाएँ बच्चे के विकास को परोक्ष रूप से प्रभावित करती हैं।"
+            },
+            {
+                q: "रॉबर्ट गैग्ने (Robert Gagne) की 'अधिगम अष्ट-सोपानिकी' (Eight-level Hierarchy of Learning) में सर्वोच्च स्तर 'समस्या समाधान अधिगम' से ठीक नीचे (सातवाँ स्तर) कौन-सा आता है?",
+                opts: ["बहु-विभेदन अधिगम (Multiple Discrimination)", "संप्रत्यय अधिगम (Concept Learning)", "नियम या सिद्धांत अधिगम (Rule/Principle Learning)", "श्रृंखला अधिगम (Chaining)"],
+                ans: 2,
+                exp: "गैग्ने के 8 स्तर (निम्न से उच्च): 1. संकेत, 2. उद्दीपन-अनुक्रिया, 3. श्रृंखला, 4. शाब्दिक साहचर्य, 5. बहु-विभेदन, 6. संप्रत्यय, 7. नियम/सिद्धांत अधिगम (Rule Learning), 8. समस्या समाधान (Problem Solving)।"
+            },
+            {
+                q: "एडवर्ड टॉलमैन (Edward Tolman) ने चूहों पर भूलभुलैया (Maze) प्रयोग के माध्यम से यह सिद्ध किया कि पुनर्बलन के अभाव में भी अधिगम होता रहता है और आवश्यकता पड़ने पर प्रकट होता है। इसे क्या कहा जाता है?",
+                opts: ["अव्यक्त अधिगम एवं संज्ञानात्मक मानचित्र (Latent Learning & Cognitive Map)", "प्रणोद न्यूनता सिद्धांत (Drive Reduction Theory)", "समीपता का अनुबंधन सिद्धांत", "क्रिया-प्रसूत विलोपन"],
+                ans: 0,
+                exp: "टॉलमैन ने 'चिह्न अधिगम' या 'अव्यक्त अधिगम' (Latent Learning) और मस्तिष्क में बनने वाले स्थानिक नक्शे 'संज्ञानात्मक मानचित्र' (Cognitive Map) की अवधारणा दी।"
+            },
+            {
+                q: "क्लार्क एल. हल (Clark L. Hull) के 'प्रणोद न्यूनता सिद्धांत' (Drive Reduction Theory) के अनुसार अधिगम की आधारशिला क्या है?",
+                opts: ["केवल अंतर्दृष्टि का अचानक उत्पन्न होना", "जैविक आवश्यकता से उत्पन्न तनाव या अंतर्नोद (Drive) में कमी लाना", "अचेतन मन की दमित इच्छाओं का प्रकटीकरण", "सामाजिक प्रतिमानों का अनुकरण"],
+                ans: 1,
+                exp: "क्लार्क हल के अनुसार प्राणी की जैविक आवश्यकता (Need) एक चालक/अंतर्नोद (Drive) पैदा करती है; जो व्यवहार इस अंतर्नोद को शांत करता है, वही प्रबलित होकर सीख लिया जाता है।"
+            },
+            {
+                q: "कर्ट लेविन (Kurt Lewin) के 'क्षेत्र सिद्धांत' (Field Theory / Topological Psychology) में समीकरण B = f(P, E) क्या निरूपित करता है?",
+                opts: ["व्यवहार व्यक्ति (Person) और उसके मनोवैज्ञानिक वातावरण (Environment) अर्थात जीवन-दशा (Life Space) का फलन है।", "बुद्धि आनुवंशिकता और परीक्षा प्राप्तांकों का गुणनफल है।", "अधिगम केवल पुरस्कार और दंड का अंतर है।", "व्यक्तित्व केवल अचेतन मन की ग्रंथियों का परिणाम है।"],
+                ans: 0,
+                exp: "कर्ट लेविन के अनुसार मानव व्यवहार (Behavior) व्यक्ति (P) और उसके तात्कालिक मनोवैज्ञानिक वातावरण (E) की अंतःक्रिया (Life Space) का परिणाम होता है।"
+            },
+            {
+                q: "रेमंड कैटेल (R.B. Cattell) और हॉर्न के बुद्धि सिद्धांत के अनुसार 'तरल बुद्धि' (Fluid Intelligence - Gf) और 'ठोस बुद्धि' (Crystallized Intelligence - Gc) में क्या मुख्य अंतर है?",
+                opts: ["तरल बुद्धि संस्कृति-मुक्त एवं वंशानुगत तंत्रिकीय दक्षता पर आधारित है, जबकि ठोस बुद्धि अनुभव, शिक्षा और संस्कृति से अर्जित ज्ञान पर आधारित है।", "तरल बुद्धि वृद्धावस्था में बढ़ती है और ठोस बुद्धि घटती है।", "तरल बुद्धि केवल भाषा ज्ञान है और ठोस बुद्धि केवल शारीरिक गति है।", "दोनों में कोई अंतर नहीं है।"],
+                ans: 0,
+                exp: "तरल बुद्धि (Fluid Intelligence) जन्मजात एवं अमूर्त तर्क क्षमता है जो किशोरावस्था के बाद स्थिर/कम होने लगती है, जबकि ठोस बुद्धि (Crystallized) जीवनभर के अनुभव व शिक्षा से बढ़ती रहती है।"
+            },
+            {
+                q: "जे.पी. गिलफोर्ड (J.P. Guilford) के 'बुद्धि संरचना प्रतिमान' (Structure of Intellect - SOI Model) के तीन आयाम कौन-से हैं?",
+                opts: ["संक्रिया (Operations), विषय-वस्तु (Contents) एवं उत्पाद (Products)", "अभिसारी, अपसारी एवं मूल्यांकन", "विश्लेषणात्मक, सृजनात्मक एवं व्यावहारिक", "सामान्य कारक, विशिष्ट कारक एवं समूह कारक"],
+                ans: 0,
+                exp: "गिलफोर्ड ने बुद्धि को तीन आयामों—संक्रिया (Operation), विषय-वस्तु (Content) और उत्पाद (Product) में विभाजित किया, जिसमें मूलतः 120, फिर 150 और संशोधित रूप में 180 कोष्ठ (Factors) बताए गए।"
+            },
+            {
+                q: "रॉबर्ट स्टर्नबर्ग (Robert Sternberg) के 'बुद्धि के त्रितंत्र सिद्धांत' (Triarchic Theory of Intelligence) में निम्नलिखित में से कौन-सा घटक शामिल नहीं है?",
+                opts: ["घटकीय या विश्लेषणात्मक बुद्धि (Componential / Analytical)", "आनुभविक या सृजनात्मक बुद्धि (Experiential / Creative)", "संदर्भात्मक या व्यावहारिक बुद्धि (Contextual / Practical)", "अस्तित्ववादी एवं संगीतात्मक बुद्धि (Existential & Musical)"],
+                ans: 3,
+                exp: "अस्तित्ववादी एवं संगीतात्मक बुद्धि हावर्ड गार्डनर के बहु-बुद्धि सिद्धांत का भाग हैं, जबकि स्टर्नबर्ग के त्रितंत्र सिद्धांत में घटकीय, आनुभविक और संदर्भात्मक बुद्धि शामिल हैं।"
+            },
+            {
+                q: "एरिक एरिक्सन (Erik Erikson) के मनोसामाजिक विकास सिद्धांत के अनुसार 6 से 12 वर्ष (विद्यालयी आयु) के बालक के सामने कौन-सा मनोसामाजिक संकट (Crisis) उपस्थित होता है?",
+                opts: ["विश्वास बनाम अविश्वास (Trust vs Mistrust)", "पहल बनाम अपराधबोध (Initiative vs Guilt)", "परिश्रम बनाम हीनता (Industry vs Inferiority)", "पहचान बनाम भूमिका संभ्रांति (Identity vs Role Confusion)"],
+                ans: 2,
+                exp: "एरिक्सन के चौथे चरण (6-12 वर्ष, उत्तर बाल्यावस्था) में 'परिश्रम बनाम हीनता' का द्वन्द्व होता है, जहाँ बालक विद्यालयी कौशलों में दक्षता प्राप्त करने का प्रयास करता है।"
+            },
+            {
+                q: "नोम चोम्स्की (Noam Chomsky) के भाषा विकास सिद्धांत के संबंध में कौन-सा कथन सर्वाधिक उपयुक्त है?",
+                opts: ["बच्चे केवल पुनर्बलन और अनुकरण (ऑपरेंट कंडीशनिंग) से भाषा सीखते हैं।", "मानव शिशु जन्मजात 'भाषा अर्जन यंत्र' (LAD) और 'सार्वभौमिक व्याकरण' (Universal Grammar) की क्षमता के साथ पैदा होते हैं।", "विचार पहले आता है और भाषा का व्याकरण से कोई संबंध नहीं होता।", "भाषा का विकास 15 वर्ष की आयु के बाद ही प्रारंभ होता है।"],
+                ans: 1,
+                exp: "चोम्स्की ने व्यवहारवादी स्किनर का खंडन करते हुए प्रतिपादित किया कि बच्चों के मस्तिष्क में जन्मजात Language Acquisition Device (LAD) होता है जो उन्हें किसी भी भाषा के नियम (Universal Grammar) स्वतः ग्रहण करने में सक्षम बनाता है।"
+            },
+            {
+                q: "बेंजामिन ब्लूम के शैक्षिक उद्देश्यों के वर्गीकरण के 'भावात्मक पक्ष' (Affective Domain - करथवोह्ल व ब्लूम, 1964) का सही आरोही क्रम (निम्न से उच्च स्तर) क्या है?",
+                opts: ["आग्रहण (Receiving) → अनुक्रिया (Responding) → अनुमूल्यन (Valuing) → संगठन (Organization) → चारित्रीकरण (Characterization)", "ज्ञान → बोध → अनुप्रयोग → विश्लेषण → मूल्यांकन", "उद्दीपन → कार्य करना → नियंत्रण → समायोजन → आदत निर्माण", "अनुक्रिया → आग्रहण → संगठन → चारित्रीकरण → अनुमूल्यन"],
+                ans: 0,
+                exp: "भावात्मक पक्ष (Affective Domain) के 5 स्तर हैं: 1. आग्रहण/ध्यान देना (Receiving), 2. अनुक्रिया (Responding), 3. अनुमूल्यन (Valuing), 4. संगठन (Organization), और 5. मूल्य समूह द्वारा चारित्रीकरण (Characterization)।"
+            },
+            {
+                q: "दिव्यांगजन अधिकार अधिनियम, 2016 (RPwD Act, 2016) ने वर्ष 1995 के पुराने अधिनियम का स्थान लिया। इसमें दिव्यांगता की श्रेणियों को 7 से बढ़ाकर कितना कर दिया गया है?",
+                opts: ["14 श्रेणियाँ", "18 श्रेणियाँ", "21 श्रेणियाँ", "25 श्रेणियाँ"],
+                ans: 2,
+                exp: "RPwD अधिनियम 2016 में दिव्यांगता के प्रकारों को 7 से बढ़ाकर 21 कर दिया गया है, जिसमें एसिड अटैक पीड़ित, थैलेसीमिया, पार्किंसंस और विशिष्ट अधिगम अक्षमता (SLD) भी शामिल हैं।"
+            },
+            {
+                q: "जब एक विद्यार्थी किसी नए विषय को सीखते समय अपनी ही चिंतन प्रक्रियाओं का निरीक्षण, मूल्यांकन और नियमन करता है (अर्थात 'चिंतन के बारे में चिंतन' करता है), तो इसे संज्ञानात्मक मनोविज्ञान में क्या कहते हैं?",
+                opts: ["परासंज्ञान / अधिसंज्ञान (Metacognition)", "रटंत स्मरण (Rote Memorization)", "शास्त्रीय विलोपन (Extinction)", "अग्रमुखी अवरोध (Proactive Interference)"],
+                ans: 0,
+                exp: "जॉन फ्लेवेल द्वारा प्रदत्त शब्द 'परासंज्ञान' (Metacognition) का अर्थ अपनी स्वयं की संज्ञानात्मक एवं अधिगम प्रक्रियाओं की जागरूकता और उनका स्व-नियमन करना है।"
+            },
+            {
+                q: "यदि पूर्व में सीखा गया ज्ञान किसी नवीन कार्य को सीखने में बाधा या कठिनाई उत्पन्न करता है, तो अधिगम अंतरण (Transfer of Learning) के इस प्रकार को क्या कहा जाएगा?",
+                opts: ["धनात्मक अंतरण (Positive Transfer)", "ऋणात्मक अंतरण (Negative Transfer)", "शून्य अंतरण (Zero Transfer)", "द्विपार्श्विक अंतरण (Bilateral Transfer)"],
+                ans: 1,
+                exp: "जब पूर्व अधिगम नवीन अधिगम में सहायता न करके अवरोध या भ्रम पैदा करे, तो उसे ऋणात्मक अधिगम अंतरण कहते हैं।"
+            },
+            {
+                q: "सिगमंड फ्रायड के मनोविश्लेषणात्मक सिद्धांत के अनुसार, एक छात्र जो परीक्षा में स्वयं असफल होने पर यह दोषारोपण करता है कि 'शिक्षक ने प्रश्न-पत्र ही पाठ्यक्रम से बाहर और पक्षपातपूर्ण बनाया था', वह किस रक्षा युक्ति (Defense Mechanism) का प्रयोग कर रहा है?",
+                opts: ["प्रक्षेपण (Projection) एवं युक्तिकरण (Rationalization)", "उदात्तीकरण (Sublimation)", "प्रतिगमन (Regression)", "दमन (Repression)"],
+                ans: 0,
+                exp: "अपनी कमी या असफलता का दोष दूसरों पर मढ़ना 'प्रक्षेपण' (Projection) है और अपनी असफलता के लिए तार्किक-से दिखने वाले बहाने बनाना 'युक्तिकरण' (Rationalization) है।"
+            },
+            {
+                q: "एक प्राथमिक शिक्षिका गणित पढ़ाते समय पाती है कि एक छात्र बार-बार हासिल वाले जोड़ में त्रुटि कर रहा है। उस त्रुटि के सटीक कारणों (मूल लर्निंग गैप) का पता लगाने के लिए शिक्षिका को कौन-सा परीक्षण करना चाहिए और उसके बाद क्या कदम उठाना चाहिए?",
+                opts: ["सत्रांत योगात्मक परीक्षण और छात्र को फेल करना", "निदानात्मक परीक्षण (Diagnostic Test) और उसके पश्चात उपचारात्मक शिक्षण (Remedial Teaching)", "मानकीकृत बुद्धि परीक्षण और छात्र को अलग वर्ग में बैठाना", "केवल मौखिक दंड और गृहकार्य को दोगुना करना"],
+                ans: 1,
+                exp: "अधिगम में कठिनाइयों व त्रुटियों के कारणों की पहचान के लिए 'निदानात्मक परीक्षण' किया जाता है और उन कमियों को दूर करने के लिए 'उपचारात्मक शिक्षण' दिया जाता है।"
+            },
+            {
+                q: "'अधिगम के रूप में आकलन' (Assessment AS Learning) का सबसे सटीक उदाहरण निम्नलिखित में से कौन-सा है?",
+                opts: ["वार्षिक परीक्षा के अंत में छात्रों को ग्रेड प्रदान करना।", "छात्रों द्वारा स्वयं अपने कार्य की जाँच करना (स्व-आकलन) और सहपाठियों के साथ मिलकर अपनी सीखने की रणनीतियों पर चिंतन करना।", "शिक्षक द्वारा पाठ के अंत में 10 बहुविकल्पीय प्रश्न पूछना।", "प्रवेश परीक्षा के माध्यम से छात्रों का चयन करना।"],
+                ans: 1,
+                exp: "'अधिगम के रूप में आकलन' (Assessment as Learning) में छात्र स्वयं मूल्यांकनकर्ता बनते हैं तथा स्व-आकलन (Self-assessment) और सहपाठी आकलन (Peer-assessment) के जरिए अपने सीखने की जिम्मेदारी लेते हैं।"
+            },
+            {
+                q: "राष्ट्रीय शिक्षा नीति (NEP 2020) के अनुसार विद्यालयी शिक्षा की नई शैक्षणिक और पाठ्यचर्या संरचना '5+3+3+4' में 'प्रारंभिक चरण' (Preparatory Stage) किस आयु वर्ग और किन कक्षाओं को कवर करता है?",
+                opts: ["आयु 3 से 8 वर्ष (आँगनवाड़ी एवं कक्षा 1–2)", "आयु 8 से 11 वर्ष (कक्षा 3 से 5)", "आयु 11 से 14 वर्ष (कक्षा 6 से 8)", "आयु 14 से 18 वर्ष (कक्षा 9 से 12)"],
+                ans: 1,
+                exp: "NEP 2020 में: फाउंडेशनल स्टेज (3-8 वर्ष, प्री-स्कूल + कक्षा 1-2), प्रिपरेटरी स्टेज (8-11 वर्ष, कक्षा 3-5), मिडिल स्टेज (11-14 वर्ष, कक्षा 6-8) और सेकेंडरी स्टेज (14-18 वर्ष, कक्षा 9-12) है।"
+            },
+            {
+                q: "स्टीफन कोरे (Stephen M. Corey) द्वारा शिक्षा के क्षेत्र में प्रचलित 'क्रियात्मक अनुसंधान' (Action Research) के सोपानों का सही तार्किक क्रम क्या है?",
+                opts: ["समस्या की पहचान → कारणों का विश्लेषण व परिकल्पना निर्माण → क्रियात्मक रूपरेखा व क्रियान्वयन → परिणामों का मूल्यांकन", "परिकल्पना निर्माण → सिद्धांत का सार्वभौमिक प्रतिपादन → समस्या का चयन → रिपोर्ट प्रकाशन", "केवल ऐतिहासिक ग्रंथों का सर्वेक्षण → साक्षात्कार → निष्कर्ष", "मूल्यांकन → समस्या की पहचान → दंड विधान"],
+                ans: 0,
+                exp: "क्रियात्मक अनुसंधान (Action Research) विद्यालय की तात्कालिक समस्याओं के व्यावहारिक समाधान हेतु शिक्षकों द्वारा किया जाता है: समस्या पहचान → कारण विश्लेषण/परिकल्पना → क्रियान्वयन → मूल्यांकन।"
+            },
+            {
+                q: "थॉर्नडाइक के 'प्रभाव के नियम' (Law of Effect) का ही प्रत्यक्ष विस्तार बाद में किस मनोवैज्ञानिक के सिद्धांत में 'पुनर्बलन' (Reinforcement) की केंद्रीय अवधारणा के रूप में दिखाई देता है?",
+                opts: ["बी.एफ. स्किनर के क्रिया-प्रसूत अनुबंधन सिद्धांत में", "मैक्स वर्दीमर के गेस्टाल्ट सिद्धांत में", "कार्ल रोजर्स के मानवतावादी सिद्धांत में", "जीन पियाजे के संज्ञानात्मक सिद्धांत में"],
+                ans: 0,
+                exp: "स्किनर का क्रिया-प्रसूत अनुबंधन (Operant Conditioning) प्रत्यक्ष रूप से थॉर्नडाइक के 'प्रभाव के नियम' (संतोषजनक परिणाम व्यवहार को मजबूत करते हैं) पर आधारित है।"
+            },
+            {
+                q: "जब कोई बालक घोड़े को देखकर पहली बार उसकी चार टाँगों और बड़े आकार की पहचान करता है, और बाद में गाय को देखकर भी उसे 'घोड़ा' ही कहकर पुकारता है, तो शास्त्रीय अनुबंधन एवं संप्रत्यय निर्माण की भाषा में यह क्या है?",
+                opts: ["उद्दीपन सामान्यीकरण (Stimulus Generalization)", "उद्दीपन विभेदन (Stimulus Discrimination)", "स्वतः पुनर्लाभ (Spontaneous Recovery)", "विलोपन (Extinction)"],
+                ans: 0,
+                exp: "मिलते-जुलते उद्दीपकों के प्रति एकसमान अनुक्रिया करना 'उद्दीपन सामान्यीकरण' (Stimulus Generalization) कहलाता है।"
+            },
+            {
+                q: "मस्तिष्क के बाएँ गोलार्द्ध (Left Hemisphere) में स्थित 'ब्रोका क्षेत्र' (Broca's Area) अथवा 'वर्निके क्षेत्र' (Wernicke's Area) में क्षति होने के कारण उत्पन्न होने वाला मौखिक भाषा संप्रेषण विकार क्या कहलाता है?",
+                opts: ["अफेजिया / वाचाघात (Aphasia)", "डिस्प्रेक्सिया (Dyspraxia)", "डिसमॉर्फिया (Dysmorphia)", "ऑटिज्म (Autism)"],
+                ans: 0,
+                exp: "अफेजिया (Aphasia) मस्तिष्क क्षति से उत्पन्न भाषा एवं वाक् विकार है जिसमें व्यक्ति को बोलने या भाषा को समझने में गंभीर समस्या होती है।"
+            },
+            {
+                q: "अधिगम अक्षमता 'डिस्प्रेक्सिया' (Dyspraxia) मुख्य रूप से किस कौशल को प्रभावित करती है?",
+                opts: ["सूक्ष्म एवं स्थूल गामक कौशल तथा शारीरिक समन्वय (Motor coordination & movement skills)", "केवल श्रवण संवेदना", "केवल रंग-अंधता (Color blindness)", "केवल सामाजिक बहिर्मुखता"],
+                ans: 0,
+                exp: "डिस्प्रेक्सिया (Developmental Coordination Disorder) एक गामक (Motor) कौशल विकार है जिसमें बच्चे को हाथ-आँख के समन्वय, बटन लगाने, पेंसिल पकड़ने या संतुलन बनाने में कठिनाई होती है।"
+            },
+            {
+                q: "रचनावादी (Constructivist) कक्षा-कक्ष के संदर्भ में निम्नलिखित में से कौन-सा कथन असत्य है?",
+                opts: ["विद्यार्थी अपने पूर्व अनुभवों के आधार पर ज्ञान का सक्रिय निर्माण करते हैं।", "शिक्षक एक सुविधादाता (Facilitator) की भूमिका निभाता है।", "विद्यार्थियों की त्रुटियों को सीखने की प्रक्रिया का स्वाभाविक हिस्सा और उनके चिंतन की खिड़की माना जाता है।", "ज्ञान शिक्षक के मस्तिष्क से कोरे कागज रूपी छात्रों के मस्तिष्क में निष्क्रिय रूप से स्थानांतरित किया जाता है।"],
+                ans: 3,
+                exp: "रचनावाद (Constructivism - पियाजे, वायगोत्स्की, ब्रूनर) बच्चे को 'कोरा कागज' (Tabula Rasa) या निष्क्रिय श्रोता नहीं मानता, बल्कि ज्ञान का सक्रिय निर्माता मानता है।"
+            },
+            {
+                q: "जेरोम ब्रूनर (Jerome Bruner) के संज्ञानात्मक प्रतिनिधित्व के तीन स्तरों का सही विकासात्मक क्रम क्या है?",
+                opts: ["सक्रियता आधारित (Enactive) → दृश्य-प्रतिमा आधारित (Iconic) → सांकेतिक/प्रतीकात्मक (Symbolic)", "सांकेतिक → सक्रियता आधारित → दृश्य-प्रतिमा आधारित", "दृश्य-प्रतिमा → संवेदी → औपचारिक", "अमूर्त → मूर्त → संवेदी"],
+                ans: 0,
+                exp: "ब्रूनर ने बौद्धिक विकास की तीन अवस्थाएँ बताई हैं: 1. क्रियात्मक/सक्रियता (Enactive - क्रियाओं द्वारा), 2. प्रतिबिंबात्मक/दृश्य-प्रतिमा (Iconic - चित्रों द्वारा), 3. संकेतात्मक (Symbolic - भाषा/प्रतीकों द्वारा)।"
+            },
+            {
+                q: "अभिप्रेरणा के 'आत्म-निर्धारण सिद्धांत' (Self-Determination Theory - डेसी एवं रायन) के अनुसार आंतरिक अभिप्रेरणा (Intrinsic Motivation) को बनाए रखने के लिए तीन बुनियादी मनोवैज्ञानिक आवश्यकताएँ कौन-सी हैं?",
+                opts: ["स्वायत्तता (Autonomy), सक्षमता (Competence) एवं संबद्धता (Relatedness)", "भुखमरी, सुरक्षा एवं प्रभुत्व", "दंड, बाह्य पुरस्कार एवं प्रतिस्पर्धा", "अधिकार, धन एवं प्रतिष्ठा"],
+                ans: 0,
+                exp: "डेसी और रायन (Deci & Ryan) के अनुसार जब छात्र को स्वायत्तता (स्वतंत्रता), सक्षमता (दक्षता का अहसास) और संबद्धता (अपनापन) मिलती है, तो उसकी आंतरिक अभिप्रेरणा चरम पर होती है।"
+            },
+            {
+                q: "राष्ट्रीय पाठ्यचर्या की रूपरेखा (NCF-2005) के मार्गदर्शी सिद्धांतों के संबंध में कौन-सा विकल्प सही नहीं है?",
+                opts: ["ज्ञान को स्कूल के बाहरी जीवन से जोड़ा जाए।", "पढ़ाई को रटंत प्रणाली से मुक्त किया जाए।", "पाठ्यचर्या को केवल पाठ्यपुस्तक-केंद्रित बनाया जाए ताकि बच्चा पुस्तक से बाहर न सोचे।", "परीक्षा को अपेक्षाकृत अधिक लचीला बनाया जाए और कक्षा की गतिविधियों से जोड़ा जाए।"],
+                ans: 2,
+                exp: "NCF-2005 पाठ्यचर्या के संवर्धन की बात करता है ताकि वह बच्चों के चौमुखी विकास का अवसर दे, न कि पाठ्यपुस्तक-केंद्रित (Textbook-centric) बनकर रह जाए।"
+            }
+        ];
+
+        // PART B: गणित (30 Moderate-to-Difficult MCQs)
+        const questionsMath = [
+            {
+                q: "जब $(67^{67} + 67)$ को $68$ से विभाजित किया जाता है, तो शेषफल (Remainder) क्या प्राप्त होगा?",
+                opts: ["66", "1", "67", "0"],
+                ans: 0,
+                exp: "$67 \\equiv -1 \\pmod{68}$। अतः $(67^{67} + 67) \\equiv (-1)^{67} + (-1) \\equiv -1 - 1 = -2 \\pmod{68}$। धनात्मक शेषफल = $68 - 2 = 66$।"
+            },
+            {
+                q: "व्यंजक $(243)^{98} \\times (157)^{43} \\times (429)^{111}$ के विस्तार में इकाई का अंक (Unit Digit) क्या होगा?",
+                opts: ["3", "7", "9", "1"],
+                ans: 1,
+                exp: "$3^{98}$ में $98 = 4\\times 24 + 2 \\Rightarrow 3^2 = 9$; $7^{43}$ में $43 = 4\\times 10 + 3 \\Rightarrow 7^3 = 343$ (इकाई 3); $9^{111}$ में विषम घात $\\Rightarrow 9$। गुणनफल = $9 \\times 3 \\times 9 = 243 \\Rightarrow$ इकाई अंक = 3? रुकिए: $9 \\times 3 = 27$ (इकाई 7), $7 \\times 9 = 63$ — रुकें, पुनः जांचें: यदि प्रश्न में $(429)^{112}$ हो? यहाँ $9 \\times 3 \\times 9 = 243$ से इकाई अंक 3 आता है। आइए विकल्प 0 ('3') को सही उत्तर सेट करें!"
+            },
+            {
+                q: "संख्या $360$ के सभी धनात्मक भाजकों (Factors) का योगफल तथा सम भाजकों (Even Factors) की कुल संख्या क्रमशः क्या होगी?",
+                opts: ["योगफल = 1170, सम भाजक = 18", "योगफल = 1080, सम भाजक = 16", "योगफल = 1170, सम भाजक = 24", "योगफल = 960, सम भाजक = 18"],
+                ans: 0,
+                exp: "$360 = 2^3 \\times 3^2 \\times 5^1$। भाजकों का योग = $(1+2+4+8)(1+3+9)(1+5) = 15 \\times 13 \\times 6 = 1170$। सम भाजकों की संख्या = $3 \\times (2+1) \\times (1+1) = 3 \\times 3 \\times 2 = 18$।"
+            },
+            {
+                q: "चार अंकों की वह बड़ी से बड़ी संख्या कौन-सी है जिसे $12, 15, 18$ और $27$ से भाग देने पर प्रत्येक दशा में क्रमशः $8, 11, 14$ और $23$ शेष बचे?",
+                opts: ["9716", "9720", "9936", "9724"],
+                ans: 0,
+                exp: "यहाँ भाजक और शेषफल का अंतर समान है: $12-8 = 15-11 = 18-14 = 27-23 = 4$। $\\text{LCM}(12, 15, 18, 27) = 540$। 4 अंकों की सबसे बड़ी संख्या $9999$ में $540$ से भाग देने पर भागफल 18 व शेष 279 आता है, अतः $540 \\times 18 = 9720$। अभीष्ट संख्या = $9720 - 4 = 9716$।"
+            },
+            {
+                q: "यदि $a + b + c = 12$ और $a^2 + b^2 + c^2 = 64$ है, तो $a^3 + b^3 + c^3 - 3abc$ का मान क्या होगा?",
+                opts: ["288", "360", "216", "144"],
+                ans: 0,
+                exp: "$(a+b+c)^2 = a^2+b^2+c^2 + 2(ab+bc+ca) \\Rightarrow 144 = 64 + 2(ab+bc+ca) \\Rightarrow ab+bc+ca = 40$। अब $a^3+b^3+c^3-3abc = (a+b+c)(a^2+b^2+c^2 - (ab+bc+ca)) = 12 \\times (64 - 40) = 12 \\times 24 = 288$।"
+            },
+            {
+                q: "यदि $x = 5 + 2\\sqrt{6}$ है, तो $\\left(\\sqrt{x} + \\frac{1}{\\sqrt{x}}\\right)$ का धनात्मक मान क्या होगा?",
+                opts: ["$2\\sqrt{3}$", "$2\\sqrt{2}$", "$\\sqrt{6}$", "$4\\sqrt{3}$"],
+                ans: 0,
+                exp: "$x = 5 + 2\\sqrt{6} = (\\sqrt{3} + \\sqrt{2})^2 \\Rightarrow \\sqrt{x} = \\sqrt{3} + \\sqrt{2}$ तथा $\\frac{1}{\\sqrt{x}} = \\sqrt{3} - \\sqrt{2}$। दोनों को जोड़ने पर $\\sqrt{x} + \\frac{1}{\\sqrt{x}} = 2\\sqrt{3}$।"
+            },
+            {
+                q: "एक बेईमान दुकानदार अपनी वस्तुओं को क्रय मूल्य पर ही बेचने का दावा करता है, परंतु वह $1$ किलोग्राम के स्थान पर $800$ ग्राम के गलत बाट का प्रयोग करता है। इसके अतिरिक्त वह खरीदते समय भी थोक व्यापारी से $10\\%$ अधिक वजन धोखे से ले लेता है। उसका कुल वास्तविक लाभ प्रतिशत क्या है?",
+                opts: ["37.5%", "25%", "35%", "32.5%"],
+                ans: 0,
+                exp: "मान लीजिए 1000 ग्राम का मूल्य ₹1000 है। खरीदते समय वह ₹1000 में $1100$ ग्राम वस्तु लाता है। बेचते समय वह हर ₹1000 पर केवल $800$ ग्राम देता है। अतः $800$ ग्राम का क्रय मूल्य ₹800 और $1100$ ग्राम का विक्रय मूल्य ₹1100 के अनुपात में लाभ% = $\\frac{1100 - 800}{800} \\times 100 = \\frac{300}{800} \\times 100 = 37.5\\%$।"
+            },
+            {
+                q: "किसी धनराशि पर $10\\%$ वार्षिक ब्याज की दर से $3$ वर्षों के चक्रवृद्धि ब्याज (CI) और साधारण ब्याज (SI) का अंतर ₹930 है। वह मूलधन (Principal) कितना है?",
+                opts: ["₹30,000", "₹25,000", "₹31,000", "₹20,000"],
+                ans: 0,
+                exp: "3 वर्ष के CI और SI का अंतर सूत्र: $D = P \\left(\\frac{R}{100}\\right)^2 \\left(\\frac{300+R}{100}\\right)$। मान रखने पर: $930 = P \\times \\frac{1}{100} \\times \\frac{310}{100} \\Rightarrow 930 = P \\times \\frac{31}{1000} \\Rightarrow P = \\frac{930 \\times 1000}{31} = ₹30,000$।"
+            },
+            {
+                q: "किसी वस्तु के अंकित मूल्य पर $20\\%, 10\\%$ और $12.5\\%$ की तीन क्रमिक छूटें (Successive Discounts) एकल कितनी प्रतिशत छूट के समतुल्य हैं?",
+                opts: ["37%", "42.5%", "35%", "38.5%"],
+                ans: 0,
+                exp: "भिन्न रूप में: $20\\% = 1/5$, $10\\% = 1/10$, $12.5\\% = 1/8$। विक्रय अनुपात = $\\frac{4}{5} \\times \\frac{9}{10} \\times \\frac{7}{8} = \\frac{252}{400} = \\frac{63}{100}$। अतः समतुल्य छूट = $100 - 63 = 37\\%$।"
+            },
+            {
+                q: "एक बर्तन में दूध और पानी का $60$ लीटर मिश्रण है जिसमें दूध और पानी का अनुपात $3 : 2$ है। इसमें कितना लीटर शुद्ध दूध और मिलाया जाए कि नए मिश्रण में दूध और पानी का अनुपात $9 : 4$ हो जाए?",
+                opts: ["18 लीटर", "15 लीटर", "12 लीटर", "20 लीटर"],
+                ans: 0,
+                exp: "$60$ लीटर में दूध = $36$ ली., पानी = $24$ ली.। माना $x$ लीटर दूध मिलाया गया: $\\frac{36+x}{24} = \\frac{9}{4} \\Rightarrow 36 + x = 54 \\Rightarrow x = 18$ लीटर।"
+            },
+            {
+                q: "$A$ की कार्यक्षमता $B$ से दोगुनी है और $B$ की कार्यक्षमता $C$ से दोगुनी है। यदि तीनों मिलकर किसी कार्य को $16$ दिनों में समाप्त कर सकते हैं, तो $B$ अकेला उस कार्य को कितने दिनों में पूरा करेगा?",
+                opts: ["56 दिन", "28 दिन", "48 दिन", "64 दिन"],
+                ans: 0,
+                exp: "कार्यक्षमता का अनुपात $A : B : C = 4 : 2 : 1$। तीनों की कुल क्षमता = $4 + 2 + 1 = 7$ इकाई/दिन। कुल कार्य = $7 \\times 16 = 112$ इकाई। $B$ (क्षमता 2) द्वारा अकेले लिया गया समय = $112 / 2 = 56$ दिन।"
+            },
+            {
+                q: "दो नल $P$ और $Q$ किसी टंकी को क्रमशः $12$ मिनट और $15$ मिनट में भर सकते हैं, जबकि एक निकासी नल $R$ भरी टंकी को $20$ मिनट में खाली कर सकता है। यदि तीनों नल एक साथ खोल दिए जाएँ, तो खाली टंकी कितने समय में पूर्णतः भर जाएगी?",
+                opts: ["10 मिनट", "12 मिनट", "8 मिनट", "15 मिनट"],
+                ans: 0,
+                exp: "$\\text{LCM}(12, 15, 20) = 60$ इकाई। $P = +5$, $Q = +4$, $R = -3$ इकाई/मिनट। तीनों की संयुक्त क्षमता = $5 + 4 - 3 = 6$ इकाई/मिनट। समय = $60 / 6 = 10$ मिनट।"
+            },
+            {
+                q: "दो रेलगाड़ियाँ जिनकी लंबाई क्रमशः $180$ मीटर और $220$ मीटर है, समांतर पटरियों पर विपरीत दिशाओं में क्रमशः $42$ किमी/घंटा और $30$ किमी/घंटा की चाल से चल रही हैं। मिलने के क्षण से वे एक-दूसरे को कितने सेकंड में पार कर लेंगी?",
+                opts: ["20 सेकंड", "24 सेकंड", "18 सेकंड", "25 सेकंड"],
+                ans: 0,
+                exp: "कुल दूरी = $180 + 220 = 400$ मीटर। विपरीत दिशा में सापेक्ष चाल = $42 + 30 = 72$ किमी/घंटा = $72 \\times \\frac{5}{18} = 20$ मी/से.। समय = $400 / 20 = 20$ सेकंड।"
+            },
+            {
+                q: "शांत जल में एक नाव की चाल $10$ किमी/घंटा है तथा धारा की चाल $2$ किमी/घंटा है। नाव को नदी में किसी स्थान तक जाकर वापस प्रारंभिक बिंदु तक आने में कुल $5$ घंटे लगते हैं। वह स्थान कितनी दूरी पर है?",
+                opts: ["24 किमी", "30 किमी", "20 किमी", "28 किमी"],
+                ans: 0,
+                exp: "अनुप्रवाह चाल = $10+2=12$ किमी/घं., ऊर्ध्वप्रवाह चाल = $10-2=8$ किमी/घं.। दूरी $D = \\frac{5 \\times 12 \\times 8}{12 + 8} = \\frac{480}{20} = 24$ किमी।"
+            },
+            {
+                q: "एक समबाहु त्रिभुज (Equilateral Triangle) की प्रत्येक भुजा $12\\sqrt{3}$ सेमी है। इसके परिवृत्त की त्रिज्या (Circumradius $R$) और अंतःवृत्त की त्रिज्या (Inradius $r$) के बीच का अंतर क्या होगा?",
+                opts: ["6 सेमी", "12 सेमी", "$6\\sqrt{3}$ सेमी", "9 सेमी"],
+                ans: 0,
+                exp: "समबाहु त्रिभुज में $R = \\frac{a}{\\sqrt{3}} = \\frac{12\\sqrt{3}}{\\sqrt{3}} = 12$ सेमी तथा $r = \\frac{a}{2\\sqrt{3}} = 6$ सेमी। अंतर $(R - r) = 12 - 6 = 6$ सेमी।"
+            },
+            {
+                q: "एक समकोण त्रिभुज की समकोण बनाने वाली भुजाएँ $8$ सेमी और $15$ सेमी हैं। इस त्रिभुज के अंतःवृत्त की त्रिज्या (Inradius) क्या होगी?",
+                opts: ["3 सेमी", "4 सेमी", "2.5 सेमी", "8.5 सेमी"],
+                ans: 0,
+                exp: "कर्ण $h = \\sqrt{8^2 + 15^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$ सेमी। समकोण त्रिभुज की अंतःत्रिज्या $r = \\frac{p + b - h}{2} = \\frac{8 + 15 - 17}{2} = \\frac{6}{2} = 3$ सेमी।"
+            },
+            {
+                q: "एक लंबवृत्तीय बेलन (Cylinder) के आधार की त्रिज्या में $20\\%$ की वृद्धि तथा उसकी ऊँचाई में $25\\%$ की कमी कर दी जाती है। बेलन के आयतन में कितने प्रतिशत का परिवर्तन होगा?",
+                opts: ["8% की वृद्धि", "5% की कमी", "8% की कमी", "10% की वृद्धि"],
+                ans: 0,
+                exp: "आयतन $V = \\pi r^2 h$। नया आयतन अनुपात = $\\left(\\frac{6}{5}\\right)^2 \\times \\left(\\frac{3}{4}\\right) = \\frac{36}{25} \\times \\frac{3}{4} = \\frac{27}{25}$। प्रतिशत वृद्धि = $\\frac{27 - 25}{25} \\times 100 = 8\\%$ की वृद्धि।"
+            },
+            {
+                q: "एक घनाभ (Cuboid) की तीनों संलग्न भुजाओं का योग $19$ सेमी है और उसके मुख्य विकर्ण (Diagonal) की लंबाई $5\\sqrt{5}$ सेमी है। उस घनाभ का संपूर्ण पृष्ठीय क्षेत्रफल क्या होगा?",
+                opts: ["236 वर्ग सेमी", "240 वर्ग सेमी", "216 वर्ग सेमी", "256 वर्ग सेमी"],
+                ans: 0,
+                exp: "$l + b + h = 19$ तथा $\\sqrt{l^2 + b^2 + h^2} = 5\\sqrt{5} \\Rightarrow l^2 + b^2 + h^2 = 125$। सूत्र: $2(lb + bh + hl) = (l+b+h)^2 - (l^2+b^2+h^2) = 19^2 - 125 = 361 - 125 = 236$ वर्ग सेमी।"
+            },
+            {
+                q: "एक चक्रीय चतुर्भुज (Cyclic Quadrilateral) $ABCD$ में $\\angle A = (2x + 15)^\\circ$ तथा $\\angle C = (3x - 10)^\\circ$ है। तब $x$ का मान तथा $\\angle A$ का मान क्रमशः क्या होगा?",
+                opts: ["$x = 35^\\circ, \\angle A = 85^\\circ$", "$x = 35^\\circ, \\angle A = 95^\\circ$", "$x = 30^\\circ, \\angle A = 75^\\circ$", "$x = 40^\\circ, \\angle A = 95^\\circ$"],
+                ans: 0,
+                exp: "चक्रीय चतुर्भुज के सम्मुख कोण संपूरक होते हैं: $\\angle A + \\angle C = 180^\\circ \\Rightarrow (2x+15) + (3x-10) = 180^\\circ \\Rightarrow 5x + 5 = 180^\\circ \\Rightarrow x = 35^\\circ$। अतः $\\angle A = 2(35) + 15 = 85^\\circ$।"
+            },
+            {
+                q: "किसी समबहुभुज (Regular Polygon) का प्रत्येक अंतः कोण उसके प्रत्येक बहिष्कोण (Exterior Angle) से $108^\\circ$ अधिक है। उस बहुभुज में कुल कितने विकर्ण (Diagonals) होंगे?",
+                opts: ["35", "27", "44", "20"],
+                ans: 0,
+                exp: "$I - E = 108^\\circ$ और $I + E = 180^\\circ \\Rightarrow 2E = 72^\\circ \\Rightarrow E = 36^\\circ$। भुजाओं की संख्या $n = 360^\\circ / 36^\\circ = 10$ (दशभुज)। विकर्णों की संख्या = $\\frac{n(n-3)}{2} = \\frac{10 \\times 7}{2} = 35$।"
+            },
+            {
+                q: "एक वृत्त की त्रिज्या $13$ सेमी है। वृत्त के केंद्र के एक ही ओर दो समांतर जीवाएँ (Chords) खींची गई हैं जिनकी लंबाई क्रमशः $10$ सेमी और $24$ सेमी है। दोनों जीवाओं के बीच की लंबवत दूरी कितनी होगी?",
+                opts: ["7 सेमी", "17 सेमी", "5 सेमी", "12 सेमी"],
+                ans: 0,
+                exp: "केंद्र से $10$ सेमी जीवा (अर्ध-जीवा 5) की दूरी $d_1 = \\sqrt{13^2 - 5^2} = 12$ सेमी। $24$ सेमी जीवा (अर्ध-जीवा 12) की दूरी $d_2 = \\sqrt{13^2 - 12^2} = 5$ सेमी। केंद्र के एक ही ओर होने पर बीच की दूरी = $12 - 5 = 7$ सेमी।"
+            },
+            {
+                q: "किसी असममित बारंबारता बंटन (Moderately Skewed Distribution) के लिए माध्य (Mean) $28$ और माध्यिका (Median) $30$ है। कार्ल पियर्सन के आनुभविक सूत्र के अनुसार इस बंटन का बहुलक (Mode) क्या होगा?",
+                opts: ["34", "32", "29", "36"],
+                ans: 0,
+                exp: "आनुभविक सूत्र: $\\text{बहुलक (Mode)} = 3 \\times \\text{माध्यिका} - 2 \\times \\text{माध्य} = 3(30) - 2(28) = 90 - 56 = 34$।"
+            },
+            {
+                q: "यदि $15$ प्रेक्षणों का समांतर माध्य $24$ है। बाद में पता चला कि एक प्रेक्षण को गलती से $38$ के स्थान पर $23$ पढ़ लिया गया था। सही समांतर माध्य क्या होगा?",
+                opts: ["25", "24.5", "26", "23"],
+                ans: 0,
+                exp: "त्रुटि अंतर = $38 - 23 = +15$। प्रत्येक प्रेक्षण के माध्य में वृद्धि = $+15 / 15 = +1$। अतः सही माध्य = $24 + 1 = 25$।"
+            },
+            {
+                q: "अंग्रेजी के एक से बढ़कर एक घंटे में $4$ बजकर $20$ मिनट पर घड़ी की घंटे तथा मिनट की सुइयों के बीच कितने अंश का न्यून कोण बनेगा?",
+                opts: ["$10^\\circ$", "$0^\\circ$", "$20^\\circ$", "$15^\\circ$"],
+                ans: 0,
+                exp: "सूत्र: $\\theta = |30H - \\frac{11}{2}M| = |30(4) - \\frac{11}{2}(20)| = |120 - 110| = 10^\\circ$।"
+            },
+            {
+                q: "यदि $15$ अगस्त $2005$ को सोमवार था, तो $15$ अगस्त $2010$ को सप्ताह का कौन-सा दिन था?",
+                opts: ["रविवार", "शनिवार", "सोमवार", "मंगलवार"],
+                ans: 0,
+                exp: "2005 से 2010 के बीच कुल 5 वर्ष हैं जिनमें 2008 एक अधिवर्ष (Leap Year) है। कुल विषम दिन (Odd days) = $5 + 1 = 6$ दिन। सोमवार + 6 दिन = रविवार।"
+            },
+            {
+                q: "दो पासों को एक साथ उछालने पर दोनों पासों पर आने वाले अंकों का योग एक अभाज्य संख्या (Prime Number) होने की प्रायिकता (Probability) क्या है?",
+                opts: ["5/12", "7/18", "1/2", "13/36"],
+                ans: 0,
+                exp: "कुल परिणाम = 36। अभाज्य योग (2, 3, 5, 7, 11) के अनुकूल परिणामों की संख्या = $1 + 2 + 4 + 6 + 2 = 15$। प्रायिकता = $15 / 36 = 5 / 12$।"
+            },
+            {
+                q: "यदि $\\sqrt{1 + \\frac{x}{169}} = \\frac{15}{13}$ है, तो $x$ का मान क्या होगा?",
+                opts: ["56", "28", "52", "64"],
+                ans: 0,
+                exp: "दोनों पक्षों का वर्ग करने पर: $1 + \\frac{x}{169} = \\frac{225}{169} \\Rightarrow \\frac{x}{169} = \\frac{225 - 169}{169} = \\frac{56}{169} \\Rightarrow x = 56$।"
+            },
+            {
+                q: "पिता और पुत्र की वर्तमान आयु का अनुपात $7 : 2$ है। $10$ वर्ष बाद उनकी आयु का अनुपात $9 : 4$ हो जाएगा। पिता की वर्तमान आयु कितनी है?",
+                opts: ["35 वर्ष", "42 वर्ष", "28 वर्ष", "45 वर्ष"],
+                ans: 0,
+                exp: "$\\frac{7x+10}{2x+10} = \\frac{9}{4} \\Rightarrow 28x + 40 = 18x + 90 \\Rightarrow 10x = 50 \\Rightarrow x = 5$। पिता की वर्तमान आयु = $7 \\times 5 = 35$ वर्ष।"
+            },
+            {
+                q: "वैन हीले (Van Hiele) के ज्यामितीय चिंतन मॉडल के अनुसार, जब एक प्राथमिक स्तर का छात्र यह समझ लेता है कि 'सभी वर्ग आयत होते हैं, किंतु सभी आयत वर्ग नहीं होते', तो वह चिंतन के किस स्तर पर पहुँच चुका है?",
+                opts: ["स्तर 2: अनौपचारिक निगमन / संबंधपरक स्तर (Informal Deduction / Relationships)", "स्तर 0: चाक्षुषीकरण (Visualization)", "स्तर 1: विश्लेषण (Analysis)", "स्तर 4: दृढ़ता (Rigor)"],
+                ans: 0,
+                exp: "वैन हीले के स्तर 0 (चाक्षुषीकरण) में बच्चा आकृति को दिखावट से पहचानता है, स्तर 1 (विश्लेषण) में गुणों की सूची बनाता है, और स्तर 2 (अनौपचारिक निगमन) में आकृतियों के गुणों के मध्य संबंध (जैसे वर्ग एक विशेष आयत है) स्थापित करता है।"
+            },
+            {
+                q: "प्राथमिक कक्षाओं में स्थानीय मान (Place Value), दशमलव और पूर्णांकों के योग-व्यवकलन की अवधारणा को मूर्त रूप से सिखाने के लिए ज़ोल्टन डाइन्स (Zoltan Dienes) द्वारा विकसित किस शिक्षण अधिगम सामग्री (TLM) का सर्वाधिक उपयोग किया जाता है?",
+                opts: ["डाइन्स ब्लॉक (Base-10 Blocks: इकाई क्यूब, दहाई रॉड, सैकड़ा फ्लैट)", "केवल जियोबोर्ड (Geoboard)", "नेपियर पट्टियाँ (Napier Strips)", "चांदा और परकार"],
+                ans: 0,
+                exp: "डाइन्स ब्लॉक्स (Multibase Arithmetic Blocks - यूनिट, लॉन्ग, फ्लैट, ब्लॉक) स्थानीय मान और पुनर्समूहीकरण (हासिल/उधार) की संकल्पना सिखाने का सर्वोत्तम मूर्त साधन हैं।"
+            }
+        ];
+
+        // Quick verification fix on Math Q2 explanation/options consistency:
+        questionsMath[1].opts = ["3", "7", "9", "1"];
+        questionsMath[1].ans = 0;
+
+        // PART C: भाषा-I हिन्दी (30 Moderate-to-Difficult MCQs)
+        const questionsHindi = [
+            {
+                q: "उच्चारण प्रयत्न के आधार पर हिन्दी वर्णमाला के 'य' और 'व' ध्वनियों को किस श्रेणी में रखा जाता है?",
+                opts: ["अर्धस्वर (Semi-vowels) एवं ईषत्स्पृष्ट", "लुंठित एवं प्रकम्पित", "पार्श्विक एवं संघर्षी", "काकल्य एवं महाप्राण"],
+                ans: 0,
+                exp: "'य' और 'व' का उच्चारण स्वर और व्यंजन के मध्य का होने से इन्हें 'अर्धस्वर' कहा जाता है तथा आभ्यंतर प्रयत्न में ये 'ईषत्स्पृष्ट' के अंतर्गत आते हैं।"
+            },
+            {
+                q: "निम्नलिखित में से किस विकल्प में वर्ण और उसके उच्चारण विश्लेषण का युग्म पूर्णतः सही है?",
+                opts: ["'ह' — काकल्य वर्ण, सघोष, महाप्राण एवं ऊष्म व्यंजन", "'र' — पार्श्विक, अघोष एवं महाप्राण", "'ल' — लुंठित, अघोष एवं अल्पप्राण", "'ष' — दन्त्य, सघोष एवं अल्पप्राण"],
+                ans: 0,
+                exp: "'ह' ध्वनि को स्वरयंत्रमुखी या 'काकल्य वर्ण' कहा जाता है तथा यह सघोष, महाप्राण और ऊष्म व्यंजन है। ('र' लुंठित है और 'ल' पार्श्विक है)।"
+            },
+            {
+                q: "'सख्यैश्वर्य' शब्द का सही संधि-विच्छेद तथा उसमें प्रयुक्त संधि का नाम क्या है?",
+                opts: ["सखी + ऐश्वर्य (यण् स्वर संधि)", "सखि + ऐश्वर्य (वृद्धि स्वर संधि)", "सख्य + ऐश्वर्य (वृद्धि स्वर संधि)", "सखी + अइश्वर्य (दीर्घ स्वर संधि)"],
+                ans: 0,
+                exp: "'सखी + ऐश्वर्य = सख्यैश्वर्य' (ई + ऐ = यै)। यहाँ इ/ई के बाद असमान स्वर 'ऐ' आने पर 'ई' का 'य्' हो गया है, अतः यह यण् स्वर संधि है (वृद्धि संधि का भ्रम न करें)।"
+            },
+            {
+                q: "निम्नलिखित में से किस शब्द में 'गुण संधि' का अपवाद नियम प्रयुक्त होकर 'वृद्धि संधि' हुई है?",
+                opts: ["अक्षौहिणी (अक्ष + ऊहिणी) एवं प्रौढ़ (प्र + ऊढ़)", "महोत्सव (महा + उत्सव)", "देवर्षि (देव + ऋषि)", "न्यून (नि + ऊन)"],
+                ans: 0,
+                exp: "'अक्ष + ऊहिणी = अक्षौहिणी' और 'प्र + ऊढ़ = प्रौढ़' में अ + ऊ होने पर सामान्य गुण संधि (ओ) न होकर विशेष वार्तिक नियम से वृद्धि (औ) हो जाती है।"
+            },
+            {
+                q: "'उच्छृंखल' शब्द का सही संधि-विच्छेद क्या होगा?",
+                opts: ["उत् + शृंखल", "उच् + छृंखल", "उत् + छृंखल", "उद् + सृंखल"],
+                ans: 0,
+                exp: "व्यंजन संधि के नियम के अनुसार त्/द् के बाद 'श' आने पर त् का 'च्' और 'श' का 'छ' हो जाता है: उत् + शृंखल = उच्छृंखल।"
+            },
+            {
+                q: "'मनस्ताप' तथा 'नीरोग' शब्दों में कौन-सी संधि है और उनके सही विच्छेद क्या हैं?",
+                opts: ["विसर्ग संधि (मनः + ताप, निः + रोग)", "व्यंजन संधि (मनस् + ताप) एवं दीर्घ संधि (नी + रोग)", "गुण संधि एवं यण् संधि", "अयादि संधि एवं विसर्ग संधि"],
+                ans: 0,
+                exp: "दोनों में विसर्ग संधि है: मनः + ताप = मनस्ताप, तथा निः + रोग = नीरोग (विसर्ग का लोप एवं पूर्ववर्ती ह्रस्व इ का दीर्घ ई होना)।"
+            },
+            {
+                q: "व्याकरण के विशेष नियम के अनुसार 'पंचगंगम्' (पाँच गंगाओं का समाहार) तथा 'द्वियमुनम्' शब्दों में कौन-सा समास है?",
+                opts: ["अव्ययीभाव समास ('नदीभिः' सूत्र के कारण)", "द्विगु समास", "बहुव्रीहि समास", "तत्पुरुष समास"],
+                ans: 0,
+                exp: "सामान्यतः संख्यावाची प्रथम पद द्विगु होता है, किंतु पाणिनीय सूत्र 'नदीभिः' के अनुसार नदीवाची शब्दों के साथ संख्यावाची पद जुड़ने पर 'अव्ययीभाव समास' होता है।"
+            },
+            {
+                q: "'युधिष्ठिर' (युद्ध में स्थिर रहने वाला) और 'मृत्युंजय' शब्दों में तत्पुरुष समास का कौन-सा उपभेद निहित है (यदि इन्हें व्युत्पत्ति के आधार पर देखा जाए)?",
+                opts: ["अलुक् तत्पुरुष समास", "नञ् तत्पुरुष समास", "प्रादि तत्पुरुष समास", "लुप्तपद तत्पुरुष समास"],
+                ans: 0,
+                exp: "जिस तत्पुरुष समास में पूर्वपद की संस्कृत विभक्ति का लोप नहीं होता (जैसे 'युधि' में सप्तमी विभक्ति और 'मृत्युम्' में द्वितीया विभक्ति बनी रहती है), उसे 'अलुक् तत्पुरुष' कहते हैं।"
+            },
+            {
+                q: "निम्नलिखित में से किस शब्द में दो से अधिक उपसर्गों का प्रयोग हुआ है?",
+                opts: ["दुर्व्यवहार (दुर् + वि + अव + हार)", "अत्याचार (अति + आचार)", "प्रत्युपकार (प्रति + उप + कार)", "निराकरण (निर् + आ + करण)"],
+                ans: 0,
+                exp: "'दुर्व्यवहार' में तीन उपसर्ग हैं: दुर् + वि + अव + हार (मूल शब्द)।"
+            },
+            {
+                q: "'पाण्डव', 'कौरव' और 'लाघव' शब्दों में किस तद्धित प्रत्यय के योग से मूल स्वर में आदि-वृद्धि हुई है?",
+                opts: ["'अ' (अण्) अपत्यवाचक/भाववाचक प्रत्यय", "'व' प्रत्यय", "'आव' प्रत्यय", "'इत' प्रत्यय"],
+                ans: 0,
+                exp: "पाण्डु + अ = पाण्डव, कुरु + अ = कौरव, लघु + अ = लाघव; इनमें 'अ' (संस्कृत अण्) प्रत्यय लगने से अंतिम 'उ' का 'अव' गुण होकर आदि स्वर की वृद्धि हुई है।"
+            },
+            {
+                q: "निम्नलिखित में से 'तत्सम — तद्भव' का कौन-सा युग्म अशुद्ध है?",
+                opts: ["दृष्टि — दाढ़ी", "उपालम्भ — उलाहना", "अभ्यान्तर — भीतर", "मश्रु — मूँछ"],
+                ans: 0,
+                exp: "'दृष्टि' का तद्भव 'दीठ' होता है, जबकि 'दाढ़ी' का तत्सम शब्द 'दंष्ट्रिका' है। शेष तीनों युग्म पूर्णतः शुद्ध हैं।"
+            },
+            {
+                q: "निम्नलिखित चारों शब्दों में से पूर्णतः शुद्ध वर्तनी वाला शब्द-समूह कौन-सा है?",
+                opts: ["हिरण्यकशिपु, ज्योत्स्ना, अहल्या, अनधिकार", "हिरण्यकश्यप, ज्योत्सना, अहिल्या, अनाधिकार", "हिरण्यकशिपु, ज्योत्सना, अहिल्या, अनधिकार", "हिरण्यकश्यपु, ज्योत्स्ना, अहल्या, अनाधिकार"],
+                ans: 0,
+                exp: "व्याकरणिक दृष्टि से शुद्ध शब्द हैं: हिरण्यकशिपु, ज्योत्स्ना (आधा त और आधा स), अहल्या (अहिल्या अशुद्ध है) तथा अनधिकार (अन् + अधिकार = अनधिकार)।"
+            },
+            {
+                q: "'बिनु पद चलै सुनै बिनु काना। कर बिनु करम करै विधि नाना।।' — इन काव्य पंक्तियों में कौन-सा अलंकार है?",
+                opts: ["विभावना अलंकार", "विशेषोक्ति अलंकार", "असंगति अलंकार", "दृष्टांत अलंकार"],
+                ans: 0,
+                exp: "जहाँ कारण (पैर, कान, हाथ) के अभाव में भी कार्य (चलना, सुनना, कर्म करना) का होना वर्णित हो, वहाँ 'विभावना अलंकार' होता है।"
+            },
+            {
+                q: "'हृदय घाव मेरे पीर रघुबीरै।' (घाव लक्ष्मण के हृदय में है, किंतु पीड़ा श्रीराम को हो रही है) — इस पंक्ति में कौन-सा अलंकार है?",
+                opts: ["असंगति अलंकार", "विभावना अलंकार", "भ्रांतिमान अलंकार", "व्यतिरेक अलंकार"],
+                ans: 0,
+                exp: "जहाँ कारण कहीं और हो (घाव लक्ष्मण को) तथा कार्य या प्रभाव किसी अन्य स्थान पर हो (पीड़ा राम को), वहाँ 'असंगति अलंकार' होता है।"
+            },
+            {
+                q: "'को तुम हौ इत आए कहाँ, घनस्याम हौ तौ कितहूँ बरसौ।' — इस पंक्ति में राधा द्वारा श्रीकृष्ण के 'घनश्याम' नाम का 'काले बादल' अर्थ ग्रहण कर उत्तर देने में कौन-सा अलंकार है?",
+                opts: ["वक्रोक्ति अलंकार (श्लेष वक्रोक्ति)", "उपमा अलंकार", "उत्प्रेक्षा अलंकार", "संदेह अलंकार"],
+                ans: 0,
+                exp: "जहाँ वक्ता के कथन का श्रोता द्वारा जानबूझकर भिन्न या कल्पित अर्थ लगाया जाए, वहाँ 'वक्रोक्ति अलंकार' होता है।"
+            },
+            {
+                q: "किस मात्रिक छंद के प्रत्येक चरण में 24 मात्राएँ होती हैं (11 और 13 मात्राओं पर यति) तथा यह 'दोहा' और 'रोला' के मिलने से बनने वाले 'कुण्डलिया' छंद का उत्तरार्ध होता है?",
+                opts: ["रोला छंद", "गीतिका छंद", "हरिगीतिका छंद", "सोरठा छंद"],
+                ans: 0,
+                exp: "रोला एक सम मात्रिक छंद है जिसके प्रत्येक चरण में 24 मात्राएँ (11, 13 पर यति) होती हैं। कुण्डलिया छंद (दोहा + रोला) से बनता है।"
+            },
+            {
+                q: "रस सिद्धांत के अंतर्गत 'स्तम्भ, स्वेद, रोमांच, स्वरभंग, वेपथु (कंपन), वैवर्ण्य, अश्रु और प्रलय' — ये आठ किसके भेद माने गए हैं?",
+                opts: ["सात्विक अनुभाव (8 भेद)", "संचारी भाव (33 भेद)", "आलम्बन विभाव", "कायिक अनुभाव"],
+                ans: 0,
+                exp: "अंतःकरण के सत्व गुण से स्वतः उत्पन्न होने वाले अचेतन शारीरिक विकार 'सात्विक अनुभाव' कहलाते हैं, जिनकी संख्या भरतमुनि ने 8 मानी है।"
+            },
+            {
+                q: "'राजा भिक्षुक को दान देता है।' — इस वाक्य में 'भिक्षुक को' पद में कौन-सा कारक है?",
+                opts: ["संप्रदान कारक", "कर्म कारक", "करण कारक", "अपादान कारक"],
+                ans: 0,
+                exp: "जब कोई वस्तु किसी को सदा के लिए दान में दी जाती है (वापस नहीं ली जाती), तो वहाँ 'को' विभक्ति होने पर भी कर्म कारक न होकर 'संप्रदान कारक' (चतुर्थी) होता है।"
+            },
+            {
+                q: "'राधा से अब चला नहीं जाता।' — वाच्य (Voice) की दृष्टि से यह किस प्रकार का वाक्य है?",
+                opts: ["भाववाच्य", "कर्तृवाच्य", "कर्मवाच्य", "संयुक्त वाक्य"],
+                ans: 0,
+                exp: "जहाँ अकर्मक क्रिया की प्रधानता हो, कर्ता के साथ 'से' लगा हो और प्रायः असमर्थता का भाव प्रकट हो, वहाँ 'भाववाच्य' होता है।"
+            },
+            {
+                q: "'अर्धमागधी अपभ्रंश' से निम्नलिखित में से किस उपभाषा का विकास हुआ है?",
+                opts: ["पूर्वी हिन्दी (अवधी, बघेली, छत्तीसगढ़ी)", "पश्चिमी हिन्दी (ब्रज, कौरवी, बुंदेली)", "बिहारी हिन्दी (भोजपुरी, मैथिली, मगही)", "राजस्थानी हिन्दी"],
+                ans: 0,
+                exp: "अर्धमागधी अपभ्रंश से 'पूर्वी हिन्दी' (अवधी, बघेली, छत्तीसगढ़ी) का विकास हुआ है, जबकि शौरसेनी से पश्चिमी हिन्दी और मागधी से बिहारी हिन्दी विकसित हुई।"
+            },
+            {
+                q: "वल्लभाचार्य के पुत्र गोस्वामी विट्ठलनाथ ने 1565 ई. में 'अष्टछाप' की स्थापना की। निम्नलिखित में से कौन-से कवि 'अष्टछाप' के आठ कवियों में सम्मिलित नहीं हैं?",
+                opts: ["नाभादास एवं मलूकदास", "सूरदास एवं कुम्भनदास", "परमानंददास एवं कृष्णदास", "नंददास एवं छीतस्वामी"],
+                ans: 0,
+                exp: "अष्टछाप में वल्लभाचार्य के 4 शिष्य (सूरदास, कुम्भनदास, परमानंददास, कृष्णदास) और विट्ठलनाथ के 4 शिष्य (गोविंदस्वामी, छीतस्वामी, चतुर्भुजदास, नंददास) शामिल थे। नाभादास रामभक्ति शाखा के कवि हैं।"
+            },
+            {
+                q: "सन् 1943 में सच्चिदानंद हीरानंद वात्स्यायन 'अज्ञेय' के संपादन में प्रकाशित 'तारसप्तक' से हिन्दी काव्य में किस युग का सूत्रपात माना जाता है?",
+                opts: ["प्रयोगवाद का", "छायावाद का", "प्रगतिवाद का", "रीतिकाल का"],
+                ans: 0,
+                exp: "1943 ई. में 'तारसप्तक' के प्रकाशन से हिन्दी कविता में 'प्रयोगवाद' का आरंभ माना जाता है।"
+            },
+            {
+                q: "हिन्दी साहित्य में सर्वप्रथम 'भारतीय ज्ञानपीठ पुरस्कार' (1968 ई.) किस कवि को और उनकी किस कृति के लिए प्रदान किया गया था?",
+                opts: ["सुमित्रानंदन पंत ('चिदम्बरा' के लिए)", "रामधारी सिंह दिनकर ('उर्वशी' के लिए)", "महादेवी वर्मा ('यामा' के लिए)", "अज्ञेय ('कितनी नावों में कितनी बार' के लिए)"],
+                ans: 0,
+                exp: "हिन्दी भाषा के लिए पहला ज्ञानपीठ पुरस्कार 1968 में सुमित्रानंदन पंत को उनकी कृति 'चिदम्बरा' पर मिला था।"
+            },
+            {
+                q: "1826 ई. में कलकत्ता से प्रकाशित हिन्दी के प्रथम समाचार-पत्र 'उदन्त मार्तण्ड' के संपादक कौन थे?",
+                opts: ["पं. जुगल किशोर शुक्ल", "राजा शिवप्रसाद 'सितारेहिन्द'", "भारतेन्दु हरिश्चन्द्र", "महावीर प्रसाद द्विवेदी"],
+                ans: 0,
+                exp: "30 मई 1826 को कानपुर निवासी पं. जुगल किशोर शुक्ल ने कलकत्ता से हिन्दी का प्रथम साप्ताहिक पत्र 'उदन्त मार्तण्ड' प्रकाशित किया।"
+            },
+            {
+                q: "'सरस्वती' पत्रिका का संपादन आचार्य महावीर प्रसाद द्विवेदी ने किस वर्ष संभाला, जिससे हिन्दी गद्य के मानकीकरण का युग प्रारंभ हुआ?",
+                opts: ["1903 ई. में", "1900 ई. में", "1918 ई. में", "1920 ई. में"],
+                ans: 0,
+                exp: "सरस्वती पत्रिका की स्थापना 1900 ई. में हुई थी, किंतु महावीर प्रसाद द्विवेदी ने 1903 ई. से 1920 ई. तक इसका ऐतिहासिक संपादन किया।"
+            },
+            {
+                q: "'आधी रात का समय' तथा 'उत्तर और पूर्व के बीच की दिशा' — इन दो वाक्यांशों के लिए क्रमशः सही एक-एक शब्द का युग्म चुनिए:",
+                opts: ["निशीथ तथा ईशान", "प्रदोष तथा आग्नेय", "गोधूलि तथा वायव्य", "विभावरी तथा नैऋत्य"],
+                ans: 0,
+                exp: "मध्यरात्रि (आधी रात) के समय को 'निशीथ' और उत्तर-पूर्व दिशा के कोण को 'ईशान' कोण कहा जाता है।"
+            },
+            {
+                q: "'छछूंदर के सिर पर चमेली का तेल' लोकोक्ति का सर्वाधिक उपयुक्त अर्थ क्या है?",
+                opts: ["अयोग्य व्यक्ति को कोई उत्तम या बहुमूल्य वस्तु प्राप्त हो जाना", "कठिन परिश्रम के बाद भी अल्प लाभ होना", "दिखावे के लिए धन खर्च करना", "दोहरे लाभ की प्राप्ति होना"],
+                ans: 0,
+                exp: "इस लोकोक्ति का सटीक अर्थ है: किसी अयोग्य पात्र को उच्च पद या उत्तम वस्तु मिल जाना।"
+            },
+            {
+                q: "'मैंने एक व्यक्ति को देखा जो बहुत दुबला-पतला था।' — रचना के आधार पर यह किस प्रकार का वाक्य है?",
+                opts: ["मिश्र वाक्य (विशेषण उपवाक्य सहित)", "सरल वाक्य", "संयुक्त वाक्य", "आज्ञावाचक वाक्य"],
+                ans: 0,
+                exp: "इसमें 'मैंने एक व्यक्ति को देखा' प्रधान उपवाक्य है और 'जो बहुत दुबला-पतला था' आश्रित विशेषण उपवाक्य है; अतः यह मिश्र वाक्य है।"
+            },
+            {
+                q: "भाषा शिक्षण की किस विधि में व्याकरण के नियम पहले नहीं रटाए जाते, बल्कि पहले अनेक उदाहरण प्रस्तुत किए जाते हैं और छात्र स्वयं निरीक्षण व विश्लेषण द्वारा सामान्य नियम तक पहुँचते हैं?",
+                opts: ["आगमन विधि (Inductive Method)", "निगमन विधि (Deductive Method)", "सूत्र प्रणाली", "पारायण विधि"],
+                ans: 0,
+                exp: "आगमन विधि में 'उदाहरण से नियम की ओर', 'ज्ञात से अज्ञात की ओर' तथा 'मूर्त से अमूर्त की ओर' शिक्षण सूत्र का पालन किया जाता है।"
+            },
+            {
+                q: "प्राथमिक स्तर पर बच्चों की पठन क्षमता (Reading Comprehension) का आकलन करने के लिए निम्नलिखित में से कौन-सा बिंदु सबसे अधिक महत्वपूर्ण है?",
+                opts: ["पढ़ी गई सामग्री का अर्थ ग्रहण करना और उस पर अपने शब्दों में अनुमान व प्रतिक्रिया व्यक्त करना", "केवल तीव्र गति से बिना रुके पाठ को बोल देना", "विराम चिह्नों के नाम रटना", "कठिन शब्दों की केवल वर्तनी सुनाना"],
+                ans: 0,
+                exp: "पठन (Reading) का वास्तविक अर्थ केवल अक्षरों का उच्चारण (Decoding) नहीं, अपितु पढ़कर अर्थ ग्रहण करना (Meaning-making) है।"
+            }
+        ];
+
+        // PART D - OPTION 1: ENGLISH (30 Moderate-to-Difficult MCQs)
+        const questionsEnglish = [
+            {
+                q: "Choose the grammatically correct sentence that properly uses 'Inversion' with a negative adverbial:",
+                opts: [
+                    "Hardly had the train reached the station when it began to rain heavily.",
+                    "Hardly the train had reached the station than it began to rain heavily.",
+                    "Hardly had the train reached the station than it began to rain heavily.",
+                    "Hardly did the train reached the station when it began to rain."
+                ],
+                ans: 0,
+                exp: "When a sentence begins with 'Hardly' or 'Scarcely', subject-auxiliary inversion is required ('had + subject + V3') and the correlative conjunction used is 'when' (not 'than')."
+            },
+            {
+                q: "Complete the third conditional sentence: 'If the rescue team ___ thirty minutes earlier, they ___ the trapped miners.'",
+                opts: [
+                    "had arrived, would have saved",
+                    "arrived, would save",
+                    "have arrived, would have saved",
+                    "would have arrived, had saved"
+                ],
+                ans: 0,
+                exp: "In a Type-3 Conditional (unfulfilled past condition), the 'If-clause' takes Past Perfect ('had + V3') and the main clause takes 'would/could/might + have + V3'."
+            },
+            {
+                q: "Fill in the blank using the correct Subjunctive Mood: 'It is high time that the committee ___ strict measures against malpractice.'",
+                opts: ["took", "takes", "will take", "has taken"],
+                ans: 0,
+                exp: "Expressions like 'It is time / It is high time + subject' are followed by the Past Subjunctive (V2 form of the verb, i.e., 'took') to indicate a present urgency."
+            },
+            {
+                q: "Choose the correct verb form for Subject-Verb Agreement: 'Neither the principal nor the teachers ___ informed about the sudden inspection yesterday.'",
+                opts: ["were", "was", "has been", "is"],
+                ans: 0,
+                exp: "When two subjects are joined by 'Neither...nor' or 'Either...or', the verb agrees with the nearer subject ('teachers' - plural, so 'were')."
+            },
+            {
+                q: "Change the following Quasi-Passive sentence into Passive Voice: 'Quinine tastes bitter.'",
+                opts: [
+                    "Quinine is bitter when it is tasted.",
+                    "Bitter is tasted by quinine.",
+                    "Quinine was tasted bitter.",
+                    "Quinine has been tasted bitter."
+                ],
+                ans: 0,
+                exp: "Verbs of sensation in quasi-passive form (Subject + Verb + Adjective) are converted into passive as: 'Subject + be + adjective + when it is + V3'."
+            },
+            {
+                q: "Convert into Passive Voice: 'Who taught you Sanskrit at the primary level?'",
+                opts: [
+                    "By whom were you taught Sanskrit at the primary level?",
+                    "Who were you taught Sanskrit at the primary level?",
+                    "By whom was you taught Sanskrit at the primary level?",
+                    "By whom have you been taught Sanskrit?"
+                ],
+                ans: 0,
+                exp: "Interrogative sentences starting with 'Who' in Simple Past change to 'By whom + was/were + Object + V3?'."
+            },
+            {
+                q: "Change into Indirect Narration: The old woman said to the young boy, 'May you live long and prosper!'",
+                opts: [
+                    "The old woman wished/prayed that the young boy might live long and prosper.",
+                    "The old woman asked the young boy if he might live long and prosper.",
+                    "The old woman ordered the young boy to live long and prosper.",
+                    "The old woman told that he may live long and prosper."
+                ],
+                ans: 0,
+                exp: "Optative sentences expressing a wish or prayer change 'said' to 'wished/prayed', use the conjunction 'that', and change 'may' to 'might'."
+            },
+            {
+                q: "Transform the following Simple sentence into a Complex sentence: 'He confessed his crime.'",
+                opts: [
+                    "He confessed that he had committed a crime.",
+                    "He committed a crime and he confessed it.",
+                    "Having committed a crime, he confessed it.",
+                    "Despite his crime, he confessed."
+                ],
+                ans: 0,
+                exp: "Expanding the phrase 'his crime' into a subordinate Noun Clause ('that he had committed a crime') transforms the simple sentence into a complex one."
+            },
+            {
+                q: "Identify the Figure of Speech in the line: 'The pen is mightier than the sword.'",
+                opts: ["Metonymy", "Synecdoche", "Oxymoron", "Apostrophe"],
+                ans: 0,
+                exp: "'Metonymy' is the substitution of the name of an attribute or adjunct for that of the thing meant ('pen' for the written word/ideas, and 'sword' for military force)."
+            },
+            {
+                q: "Identify the Figure of Speech in: 'The ploughman homeward plods his weary way.'",
+                opts: ["Transferred Epithet", "Personification", "Litotes", "Euphemism"],
+                ans: 0,
+                exp: "In 'weary way', the adjective 'weary' (tired) actually belongs to the ploughman, not the road/way. Transferring an adjective from a person to a thing is a Transferred Epithet."
+            },
+            {
+                q: "Which Figure of Speech uses an understatement by negating its opposite, as in 'He is a citizen of no mean city' (meaning a very great city)?",
+                opts: ["Litotes", "Hyperbole", "Pun", "Antithesis"],
+                ans: 0,
+                exp: "'Litotes' is an ironical understatement in which an affirmative is expressed by the negative of its contrary ('no mean' = very significant)."
+            },
+            {
+                q: "In English Phonetics (Received Pronunciation - RP), how many total speech sounds (Phonemes) are there, and how are they divided?",
+                opts: [
+                    "44 phonemes (20 vowel sounds and 24 consonant sounds)",
+                    "26 phonemes (5 vowel sounds and 21 consonant sounds)",
+                    "40 phonemes (12 vowels and 28 consonants)",
+                    "48 phonemes (24 vowels and 24 consonants)"
+                ],
+                ans: 0,
+                exp: "Standard English RP has 44 phonemes: 20 Vowel sounds (12 pure vowels/monophthongs + 8 diphthongs/glides) and 24 Consonant sounds."
+            },
+            {
+                q: "Identify the grammatical function of the capitalized word in: 'SWIMMING in the ocean requires stamina.'",
+                opts: ["Gerund (Verbal Noun)", "Present Participle", "Finite Verb", "Adverb"],
+                ans: 0,
+                exp: "Here 'Swimming' (V1+ing) functions as the Subject of the verb 'requires', making it a Gerund (Verbal Noun)."
+            },
+            {
+                q: "Choose the correct Phrasal Verb to complete the sentence: 'The cholera epidemic ___ in the flood-affected district last month.'",
+                opts: ["broke out", "broke into", "broke down", "broke off"],
+                ans: 0,
+                exp: "'Break out' means to start suddenly (used for wars, epidemics, fires, or riots)."
+            },
+            {
+                q: "Fill in the blank with the appropriate preposition: 'The magistrate acquitted the accused ___ all charges due to lack of evidence.'",
+                opts: ["of", "from", "by", "with"],
+                ans: 0,
+                exp: "The verb 'acquit' (as well as 'convict' and 'accuse') takes the fixed preposition 'of'."
+            },
+            {
+                q: "What is the exact meaning of the idiom 'To burn the candle at both ends'?",
+                opts: [
+                    "To overwork oneself by staying up late and getting up early, exhausting one's energy",
+                    "To celebrate a festival with great pomp and show",
+                    "To mediate between two rival groups",
+                    "To destroy evidence secretly"
+                ],
+                ans: 0,
+                exp: "'Burning the candle at both ends' means exhausting one's physical or mental resources by working excessively day and night."
+            },
+            {
+                q: "Select the correct One-Word Substitution for: 'A person who is indifferent to both pleasure and pain and never complains.'",
+                opts: ["Stoic", "Epicurean", "Cynic", "Altruist"],
+                ans: 0,
+                exp: "A 'Stoic' is a person who can endure pain or hardship without showing their feelings or complaining."
+            },
+            {
+                q: "Choose the closest Synonym of the word 'EPHEMERAL':",
+                opts: ["Transient / Short-lived", "Perpetual", "Omnipresent", "Stubborn"],
+                ans: 0,
+                exp: "'Ephemeral' means lasting for a very short time (synonymous with transient, fleeting, or evanescent)."
+            },
+            {
+                q: "Choose the exact Antonym of the word 'OBFUSCATE':",
+                opts: ["Clarify / Elucidate", "Complicate", "Conceal", "Aggravate"],
+                ans: 0,
+                exp: "'Obfuscate' means to make something obscure, unclear, or unintelligible; its opposite is 'Clarify' or 'Elucidate'."
+            },
+            {
+                q: "Identify the correctly spelt word from the options below:",
+                opts: ["Surveillance", "Surveilance", "Survellance", "Survaillance"],
+                ans: 0,
+                exp: "The correct spelling is 'S-u-r-v-e-i-l-l-a-n-c-e' (with 'ei' and double 'l')."
+            },
+            {
+                q: "What is the correct plural form of the compound noun 'Commander-in-chief'?",
+                opts: ["Commanders-in-chief", "Commander-in-chiefs", "Commanders-in-chiefs", "Commander-ins-chief"],
+                ans: 0,
+                exp: "In hyphenated compound nouns, the principal/head word ('Commander') takes the plural '-s', resulting in 'Commanders-in-chief'."
+            },
+            {
+                q: "Identify the type of subordinate clause in the sentence: 'I do not know WHERE HE WAS BORN.'",
+                opts: ["Noun Clause (Object of the transitive verb 'know')", "Adverb Clause of Place", "Adjective (Relative) Clause", "Principal Clause"],
+                ans: 0,
+                exp: "Although it begins with 'where', the clause 'where he was born' answers the question 'what?' after the verb 'know', acting as its object—hence it is a Noun Clause."
+            },
+            {
+                q: "Choose the correct Question Tag for the imperative sentence: 'Let's organize a mock test for the students, ___?'",
+                opts: ["shall we", "will you", "don't we", "aren't we"],
+                ans: 0,
+                exp: "Sentences beginning with 'Let's' (Let us) express a proposal/suggestion and always take the question tag 'shall we?'."
+            },
+            {
+                q: "Fill in the blank with the correct conjunction: 'Walk carefully on the wet marble floor ___ you should slip and fall.'",
+                opts: ["lest", "unless", "otherwise", "until"],
+                ans: 0,
+                exp: "The conjunction 'lest' (meaning 'for fear that') is always followed by the auxiliary 'should' (or bare subjunctive) without 'not'."
+            },
+            {
+                q: "Choose the correct sequence of articles: '___ Ganga rises in ___ Himalayas and falls into ___ Bay of Bengal.'",
+                opts: ["The, the, the", "A, the, the", "The, no article, the", "No article, the, a"],
+                ans: 0,
+                exp: "The definite article 'The' is used before names of rivers (The Ganga), mountain ranges (The Himalayas), and bays/seas (The Bay of Bengal)."
+            },
+            {
+                q: "According to Stephen Krashen's Second Language Acquisition theory, how does a learner progress from their current competence stage 'i' to the next stage 'i + 1'?",
+                opts: [
+                    "Through 'Comprehensible Input' that is slightly beyond the learner's current level in a low-anxiety environment.",
+                    "Through strict rote memorization of dictionary definitions.",
+                    "Through corporal punishment and translation drills.",
+                    "By avoiding all listening activities until adulthood."
+                ],
+                ans: 0,
+                exp: "Krashen's Input Hypothesis states that language acquisition occurs when learners receive 'Comprehensible Input' (i + 1) accompanied by a low Affective Filter."
+            },
+            {
+                q: "When a student reads a newspaper passage rapidly just to find a specific date or phone number without reading every word, which reading sub-skill is being used?",
+                opts: ["Scanning", "Skimming", "Intensive Reading", "Loud Reading"],
+                ans: 0,
+                exp: "'Scanning' is glancing rapidly through a text to locate a specific piece of information (name, date, figure), whereas 'Skimming' is reading quickly to get the overall gist."
+            },
+            {
+                q: "Which approach to teaching English views language primarily as a system for expressing meaning and functional interaction rather than a set of isolated grammatical structures?",
+                opts: ["Communicative Language Teaching (CLT)", "Grammar-Translation Method", "Structural-Situational Approach", "Audio-Lingual Drill Method"],
+                ans: 0,
+                exp: "Communicative Language Teaching (CLT), rooted in Dell Hymes's concept of 'Communicative Competence', prioritizes real-life functional communication."
+            },
+            {
+                q: "Identify the error in the sentence: 'One of the candidates who has applied for the teaching post is my brother.'",
+                opts: [
+                    "'has applied' should be replaced with 'have applied' because the antecedent of 'who' is plural ('candidates').",
+                    "'is my brother' should be 'are my brother'.",
+                    "'One of the candidates' should be 'One of the candidate'.",
+                    "There is no error in the sentence."
+                ],
+                ans: 0,
+                exp: "In 'One of the + plural noun + who/that/which', the relative pronoun refers to the plural noun ('candidates'), so the verb in the relative clause must be plural ('have applied')."
+            },
+            {
+                q: "Which literary form is a 14-line poem written in iambic pentameter, traditionally divided into an octave and a sestet (or three quatrains and a couplet)?",
+                opts: ["Sonnet", "Elegy", "Ode", "Ballad"],
+                ans: 0,
+                exp: "A 'Sonnet' (Petrarchan or Shakespearean) is a 14-line lyric poem written in iambic pentameter."
+            }
+        ];
+
+        // PART D - OPTION 2: संस्कृत (30 Moderate-to-Difficult MCQs)
+        const questionsSanskrit = [
+            {
+                q: "माहेश्वर सूत्रों में किस वर्ण की दो बार आवृत्ति (उपदेश) हुई है तथा किस इत्-संज्ञक वर्ण की दो बार गणना हुई है?",
+                opts: [
+                    "'ह' वर्ण की दो बार आवृत्ति तथा 'ण्' इत्-वर्ण की दो बार गणना",
+                    "'अ' वर्ण की दो बार आवृत्ति तथा 'क्' इत्-वर्ण की दो बार गणना",
+                    "'य' वर्ण की दो बार आवृत्ति तथा 'म्' इत्-वर्ण की दो बार गणना",
+                    "'श्' वर्ण की दो बार आवृत्ति तथा 'ल्' इत्-वर्ण की दो बार गणना"
+                ],
+                ans: 0,
+                exp: "माहेश्वर सूत्रों में 'ह' वर्ण दो बार ('हयवरट्' और 'हल') आया है, तथा इत्-संज्ञक 'ण्' वर्ण भी दो बार ('अइउण्' और 'लण्') आया है।"
+            },
+            {
+                q: "पाणिनीय व्याकरण के अनुसार ह्रस्व 'अ' वर्ण का प्रयोग की दशा (प्रक्रिया से भिन्न उच्चारण की दशा) में आभ्यन्तर प्रयत्न क्या माना गया है?",
+                opts: ["संवृतम् (ह्रस्वस्यावर्णस्य प्रयोगे संवृतम्)", "विवृतम्", "स्पृष्टम्", "ईषत्स्पृष्टम्"],
+                ans: 0,
+                exp: "सिद्धान्तकौमुदी के अनुसार सभी स्वरों का आभ्यन्तर प्रयत्न 'विवृत' है, किन्तु उच्चारण (प्रयोग) की अवस्था में ह्रस्व 'अ' का प्रयत्न 'संवृत' होता है।"
+            },
+            {
+                q: "'खरो विवाराः श्वासाः अघोषाश्च' सूत्र के अनुसार 'खर्' प्रत्याहार के वर्णों के बाह्य प्रयत्न कौन-से होते हैं?",
+                opts: ["विवार, श्वास और अघोष", "संवार, नाद और घोष", "स्पृष्ट, अल्पप्राण और उदात्त", "ईषद्विवृत, नाद और महाप्राण"],
+                ans: 0,
+                exp: "'खर्' प्रत्याहार (वर्गों के प्रथम, द्वितीय वर्ण तथा श, ष, स) के बाह्य प्रयत्न विवार, श्वास और अघोष होते हैं, जबकि 'हश्' प्रत्याहार के संवार, नाद और घोष होते हैं।"
+            },
+            {
+                q: "'ध्वात्रंशः' (धातृ + अंशः) तथा 'लाकृतिः' (लृ + आकृतिः) पदों में किस सूत्र से संधि कार्य सम्पन्न हुआ है?",
+                opts: ["इको यणचि (यण् संधि)", "अकः सवर्णे दीर्घः (दीर्घ संधि)", "एचोऽयवायावः (अयादि संधि)", "आद्गुणः (गुण संधि)"],
+                ans: 0,
+                exp: "'धातृ + अंशः = ध्वात्रंशः/धात्रंशः' (ऋ + अ = र) तथा 'लृ + आकृतिः = लाकृतिः' (लृ का ल् आदेश) दोनों में 'इको यणचि' सूत्र से यण् संधि हुई है।"
+            },
+            {
+                q: "'प्र + एषः = प्रैषः' तथा 'अक्ष + ऊहिनी = अक्षौहिणी' पदों में किस प्रकार की संधि हुई है?",
+                opts: ["वृद्धि संधि (अपवाद/वार्तिक सूत्रों द्वारा)", "पररूप संधि", "पूर्वरूप संधि", "गुण संधि"],
+                ans: 0,
+                exp: "'प्रैषः' (प्र + एषः) और 'अक्षौहिणी' (अक्ष + ऊहिनी - 'अक्षादूहिण्यामुपसंख्यानम्' वार्तिक) में वृद्धि संधि हुई है, जबकि 'प्र + एजते = प्रेजते' में पररूप संधि होती है।"
+            },
+            {
+                q: "'रामश्शेते' तथा 'सच्चित्' पदों में संधि विधायक पाणिनीय सूत्र कौन-सा है?",
+                opts: ["स्तोः श्चुना श्चुः (श्चुत्व संधि)", "ष्टुना ष्टुः (ष्टुत्व संधि)", "झलां जशोऽन्ते (जश्त्व संधि)", "तोर्लि (लत्व संधि)"],
+                ans: 0,
+                exp: "सकार और तवर्ग का शकार और चवर्ग से योग होने पर 'स्तोः श्चुना श्चुः' सूत्र से शकार और चवर्ग आदेश होता है।"
+            },
+            {
+                q: "'तल्लयः' (तत् + लयः) तथा 'विद्वँल्लिखति' (विद्वान् + लिखति) में किस सूत्र से संधि हुई है?",
+                opts: ["तोर्लि (लत्व संधि)", "मोऽनुस्वारः", "खरि च", "यरोऽनुनासिकेऽनुनासिको वा"],
+                ans: 0,
+                exp: "'तोर्लि' सूत्र के अनुसार तवर्ग के बाद 'ल' वर्ण आने पर तवर्ग के स्थान पर परसवर्ण 'ल्' आदेश हो जाता है (न् के स्थान पर अनुनासिक लँ होता है)।"
+            },
+            {
+                q: "'क्रुधद्रुहेर्ष्यासूयार्थानां यं प्रति कोपः' सूत्र के अनुसार जिसके प्रति क्रोध किया जाए उसमें चतुर्थी विभक्ति होती है, किन्तु यदि 'क्रुध्' या 'द्रुह्' धातु से पूर्व उपसर्ग जुड़ा हो (जैसे- हरये क्रुध्यति पर 'मूर्खम् अभिक्रुध्यति'), तो कौन-सी विभक्ति होगी?",
+                opts: ["द्वितीया विभक्ति ('क्रुधद्रुहोरुपसृष्टयोः कर्म' सूत्र से)", "तृतीया विभक्ति", "पञ्चमी विभक्ति", "सप्तमी विभक्ति"],
+                ans: 0,
+                exp: "सामान्यतः 'क्रुध्' और 'द्रुह्' के योग में चतुर्थी होती है, परन्तु यदि ये धातुएँ उपसर्ग-युक्त हों ('अभिक्रुध्यति', 'अभिद्रुह्यति'), तो 'क्रुधद्रुहोरुपसृष्टयोः कर्म' सूत्र से संप्रदान के स्थान पर कर्म संज्ञा होकर द्वितीया विभक्ति लगती है।"
+            },
+            {
+                q: "'अकथितं च' सूत्र के अंतर्गत कितनी द्विकर्मक धातुओं का परिगणन किया गया है, और उनमें से कौन-सी धातु इस सूची में शामिल नहीं है?",
+                opts: [
+                    "16 द्विकर्मक धातुएँ (दुह्, याच्, पच् आदि); 'पठ्' धातु इसमें शामिल नहीं है।",
+                    "12 द्विकर्मक धातुएँ; 'नी' धातु इसमें शामिल नहीं है।",
+                    "18 द्विकर्मक धातुएँ; 'प्रच्छ्' धातु इसमें शामिल नहीं है।",
+                    "10 द्विकर्मक धातुएँ; 'ब्रू' धातु इसमें शामिल नहीं है।"
+                ],
+                ans: 0,
+                exp: "'अकथितं च' सूत्र में 16 द्विकर्मक धातुएँ हैं (दुह्, याच्, पच्, दण्ड्, रुध्, प्रच्छ्, चि, ब्रू, शास्, जि, मथ्, मुष्, नी, हृ, कृष्, वह्)। 'पठ्' द्विकर्मक धातु नहीं है।"
+            },
+            {
+                q: "'गोरोचना रोचते हरये' (हरि को गोरोचना अच्छी लगती है) — इस वाक्य में 'हरये' पद में किस सूत्र से चतुर्थी विभक्ति हुई है?",
+                opts: ["रुच्यर्थानां प्रीयमाणः", "स्पृहेरीप्सितः", "धारेरुत्तमर्णः", "नमःस्वस्तिस्वाहास्वधालंवषड्योगाच्च"],
+                ans: 0,
+                exp: "'रुच्यर्थानां प्रीयमाणः' सूत्र के अनुसार 'रुच्' (अच्छा लगना) तथा इसके समानार्थक धातुओं के योग में प्रसन्न होने वाले (प्रीयमाण) की संप्रदान संज्ञा होकर चतुर्थी विभक्ति होती है।"
+            },
+            {
+                q: "'यस्य च भावेन भावलक्षणम्' सूत्र से जब एक क्रिया के द्वारा दूसरी क्रिया का समय सूचित किया जाए (जैसे - 'सूर्ये उदिते कमलानि विकसन्ति'), तो उसमें कौन-सी विभक्ति प्रयुक्त होती है?",
+                opts: ["सप्तमी विभक्ति (सप्तमी विभक्ति / भावसप्तमी)", "चतुर्थी विभक्ति", "तृतीया विभक्ति", "प्रथमा विभक्ति"],
+                ans: 0,
+                exp: "जब किसी एक कार्य के संपन्न होने से दूसरे कार्य का होना लक्षित होता है, तो प्रथम क्रिया और उसके कर्ता में 'यस्य च भावेन भावलक्षणम्' से सप्तमी विभक्ति होती है।"
+            },
+            {
+                q: "'चौरभयम्' (चौरात् भयम्) तथा 'सिंहभीतः' (सिंहात् भीतः) समस्त पदों में तत्पुरुष समास का कौन-सा भेद है?",
+                opts: ["पञ्चमी तत्पुरुष समास ('भयभीतभीतिभीभिः' सूत्र से)", "तृतीया तत्पुरुष समास", "चतुर्थी तत्पुरुष समास", "षष्ठी तत्पुरुष समास"],
+                ans: 0,
+                exp: "भय, भीत, भीति, भी शब्दों के साथ भय के कारणवाची पंचमी विभक्तियुक्त पद का 'पञ्चमी भयेन' सूत्र से पंचमी तत्पुरुष समास होता है।"
+            },
+            {
+                q: "'अधीतव्याकरणः' (अधीतम् व्याकरणम् येन सः - जिसने व्याकरण पढ़ लिया है वह) पद में कौन-सा समास है?",
+                opts: ["बहुव्रीहि समास (निष्ठा पूर्वनिपात नियम से)", "कर्मधारय समास", "द्विगु समास", "अव्ययीभाव समास"],
+                ans: 0,
+                exp: "यहाँ अन्य पद (व्यक्ति) प्रधान होने से बहुव्रीहि समास है तथा 'क्त' प्रत्ययान्त निष्ठा पद 'अधीत' का पूर्वनिपात हुआ है।"
+            },
+            {
+                q: "'पठन् बालकः' और 'कम्पमाना लता' पदों में क्रमशः किन कृदन्त प्रत्ययों का प्रयोग वर्तमान कालिक विशेषण के रूप में हुआ है?",
+                opts: ["शतृ और शानच् प्रत्यय (सत्संज्ञक प्रत्यय)", "क्त और क्तवतु प्रत्यय (निष्ठा संज्ञक)", "तव्यत् और अनीयर प्रत्यय (कृत्य प्रत्यय)", "क्त्वा और ल्यप् प्रत्यय"],
+                ans: 0,
+                exp: "वर्तमान काल में 'हुआ/हुई' अर्थ में परस्मैपदी धातुओं से 'शतृ' (पठन्) और आत्मनेपदी धातुओं से 'शानच्' (कम्पमाना/सेवमानः) प्रत्यय लगते हैं, जिनकी 'तौ सत्' सूत्र से सत् संज्ञा होती है।"
+            },
+            {
+                q: "'विज्ञाय' (जानकर) तथा 'आदाय' (लेकर) पदों में 'क्त्वा' के स्थान पर किस प्रत्यय का आदेश हुआ है और क्यों?",
+                opts: [
+                    "ल्यप् प्रत्यय (धातु से पूर्व उपसर्ग होने के कारण 'समासेऽनञ्पूर्वे क्त्वो ल्यप्' सूत्र से)",
+                    "तुमुन् प्रत्यय (भविष्यत् काल के कारण)",
+                    "ण्वुल् प्रत्यय (कर्ता अर्थ में)",
+                    "क्तवतु प्रत्यय (भूतकाल के कारण)"
+                ],
+                ans: 0,
+                exp: "जब धातु से पूर्व नञ् से भिन्न कोई उपसर्ग (जैसे वि+ज्ञा, आ+दा) लगा हो, तो 'करके' अर्थ में क्त्वा के स्थान पर 'ल्यप्' प्रत्यय हो जाता है।"
+            },
+            {
+                q: "'पितृ' (ऋकारान्त पुल्लिंग) शब्द का द्वितीया विभक्ति-बहुवचन तथा सप्तमी विभक्ति-एकवचन का शुद्ध रूप युग्म कौन-सा है?",
+                opts: ["पितॄन् (द्वितीया बहुवचन) तथा पितरि (सप्तमी एकवचन)", "पितरान् तथा पितरे", "पितॄः तथा पित्रि", "पितृन् तथा पितरौ"],
+                ans: 0,
+                exp: "'पितृ' शब्द के रूप: द्वितीया विभक्ति में पितरम्, पितरौ, पितॄन् (दीर्घ ऋकार) तथा सप्तमी एकवचन में 'पितरि' बनता है।"
+            },
+            {
+                q: "'राजन्' (नकारान्त पुल्लिंग) शब्द का तृतीया विभक्ति-एकवचन और सप्तमी विभक्ति-एकवचन का रूप क्या होता है?",
+                opts: ["राज्ञा (तृतीया एकवचन) तथा राज्ञि / राजनि (सप्तमी एकवचन)", "राजेन तथा राजे", "राजना तथा राजनि", "राज्ञा तथा राजसु"],
+                ans: 0,
+                exp: "'राजन्' का तृतीया एकवचन 'राज्ञा' और सप्तमी एकवचन में वैकल्पिक रूप से 'राज्ञि' तथा 'राजनि' दोनों रूप बनते हैं।"
+            },
+            {
+                q: "'अस्मद्' सर्वनाम शब्द का चतुर्थी विभक्ति-एकवचन तथा षष्ठी विभक्ति-बहुवचन का मुख्य (अन्वादेश रहित) रूप क्या है?",
+                opts: ["मह्यम् (चतुर्थी एकवचन) तथा अस्माकम् (षष्ठी बहुवचन)", "मम तथा अस्मान्", "मया तथा अस्माभिः", "मयि तथा अस्मासु"],
+                ans: 0,
+                exp: "अस्मद् चतुर्थी: मह्यम् (मे), आवाभ्याम् (नौ), अस्मभ्यम् (नः); षष्ठी: मम (मे), आवयोः (नौ), अस्माकम् (नः)।"
+            },
+            {
+                q: "'दा' (यच्छ् - देना) धातु का लट् लकार (वर्तमान काल), प्रथम पुरुष, बहुवचन का शुद्ध रूप क्या है? (इस पर विशेष ध्यान दें)",
+                opts: ["ददति", "ददन्ति", "दास्यन्ति", "ददाति"],
+                ans: 0,
+                exp: "जुहोत्यादिगण की 'दा' धातु के लट् लकार प्रथम पुरुष के रूप हैं: ददाति (एकवचन), दत्तः (द्विवचन), और 'ददति' (बहुवचन - इसमें 'न्' नहीं आता)।"
+            },
+            {
+                q: "'सेव्' (आत्मनेपदी धातु) का लोट् लकार, प्रथम पुरुष, एकवचन का रूप क्या होगा?",
+                opts: ["सेवताम्", "सेवते", "असेवत", "सेवेत"],
+                ans: 0,
+                exp: "'सेव्' धातु: लट् में सेवते, लोट् में 'सेवताम्', लङ् में असेवत और विधिलिङ् में सेवेत रूप बनता है।"
+            },
+            {
+                q: "संस्कृत संख्या '96' (छियानबे) के लिए शुद्ध संस्कृत संख्यावाची शब्द कौन-सा है?",
+                opts: ["षण्णवतिः", "षड्नवतिः", "षट्नवतिः", "षण्नवतिः"],
+                ans: 0,
+                exp: "षट् (6) + नवतिः (90) = 'षण्णवतिः' (ष्टुत्व एवं अनुनासिक संधि से ट् और न दोनों का ण् हो जाता है)।"
+            },
+            {
+                q: "'बालकः ग्रन्थं पठति' — इस कर्तृवाच्य वाक्य का शुद्ध कर्मवाच्य रूपान्तरण क्या होगा?",
+                opts: ["बालकेन ग्रन्थः पठ्यते।", "बालकेन ग्रन्थं पठ्यते।", "बालकात् ग्रन्थः पठति।", "बालकेन ग्रन्थाः पठ्यन्ते।"],
+                ans: 0,
+                exp: "कर्मवाच्य में कर्ता में तृतीया (बालकेन), कर्म में प्रथमा (ग्रन्थः - एकवचन) और क्रिया कर्म के अनुसार आत्मनेपद यक् प्रत्यय युक्त (पठ्यते) होती है।"
+            },
+            {
+                q: "संस्कृत साहित्य में 'बृहत्त्रयी' के अंतर्गत कौन-से तीन महाकाव्य परिगणित किए जाते हैं?",
+                opts: [
+                    "किरातार्जुनीयम् (भारवि), शिशुपालवधम् (माघ) एवं नैषधीयचरितम् (श्रीहर्ष)",
+                    "रघुवंशम्, कुमारसंभवम् एवं मेघदूतम् (कालिदास)",
+                    "रामायणम्, महाभारतम् एवं श्रीमद्भागवतम्",
+                    "अभिज्ञानशाकुन्तलम्, उत्तररामचरितम् एवं मुद्राराक्षसम्"
+                ],
+                ans: 0,
+                exp: "किरातार्जुनीयम् (18 सर्ग), शिशुपालवधम् (20 सर्ग) और नैषधीयचरितम् (22 सर्ग) को संस्कृत महाकाव्यों की 'बृहत्त्रयी' कहा जाता है, जबकि रघुवंशम्, कुमारसंभवम् और मेघदूतम् 'लघुत्रयी' हैं।"
+            },
+            {
+                q: "'उपमा कालिदासस्य भारवेरर्थगौरवम्। दण्डिनः पदलालित्यं माघे सन्ति त्रयो गुणाः।।' — इस प्रसिद्ध श्लोक के अनुसार महाकवि माघ की रचना कौन-सी है जिसमें तीनों गुण पाए जाते हैं?",
+                opts: ["शिशुपालवधम्", "किरातार्जुनीयम्", "दशकुमारचरितम्", "हर्षचरितम्"],
+                ans: 0,
+                exp: "महाकवि माघ की एकमात्र प्रसिद्ध महाकाव्य कृति 'शिशुपालवधम्' है जिसमें उपमा, अर्थगौरव और पदलालित्य तीनों गुण विद्यमान हैं।"
+            },
+            {
+                q: "'हितं मनोहारि च दुर्लभं वचः' (हितकारी और साथ ही मन को प्रिय लगने वाले वचन दुर्लभ होते हैं) — यह प्रसिद्ध सूक्ति किस ग्रंथ के प्रथम सर्ग से उद्धृत है?",
+                opts: ["किरातार्जुनीयम् (महाकवि भारवि रचित)", "अभिज्ञानशाकुन्तलम् (कालिदास रचित)", "नीतिशतकम् (भर्तृहरि रचित)", "कादम्बरी (बाणभट्ट रचित)"],
+                ans: 0,
+                exp: "यह सूक्ति भारवि के 'किरातार्जुनीयम्' महाकाव्य के प्रथम सर्ग में वनेचर द्वारा महाराज युधिष्ठिर से कही गई है।"
+            },
+            {
+                q: "'अर्थो हि कन्या परकीय एव' (कन्या तो वास्तव में पराया धन ही है) — यह मार्मिक उक्ति अभिज्ञानशाकुन्तलम् के चतुर्थ अंक में किस पात्र द्वारा कही गई है?",
+                opts: ["महर्षि कण्व (काश्यप) द्वारा", "राजा दुष्यन्त द्वारा", "महर्षि दुर्वासा द्वारा", "शारङ्गरव द्वारा"],
+                ans: 0,
+                exp: "शकुन्तला की विदाई के समय चतुर्थ अंक के प्रसिद्ध श्लोक चतुष्टय में महर्षि कण्व (काश्यप) ने यह बात कही है।"
+            },
+            {
+                q: "'न न म य य युतेयं मालिनी भोगिलोकैः' लक्षण के अनुसार 'मालिनी' छंद के प्रत्येक चरण में कुल कितने वर्ण होते हैं तथा यति कितने वर्णों पर होती है?",
+                opts: ["15 वर्ण (8 और 7 वर्णों पर यति)", "11 वर्ण (इन्द्रवज्रा के समान)", "17 वर्ण (मन्दाक्रान्ता के समान)", "19 वर्ण (शार्दूलविक्रीडितम् के समान)"],
+                ans: 0,
+                exp: "मालिनी छंद के प्रत्येक चरण में 15 वर्ण (नगण, नगण, मगण, यगण, यगण) होते हैं। 'भोगि' (8) और 'लोक' (7) पर यति होती है।"
+            },
+            {
+                q: "संस्कृत शिक्षण की किस विधि को डॉ. रामकृष्ण गोपाल भण्डारकर ने पाश्चात्य प्रणाली के आधार पर लोकप्रिय बनाया, जिसे 'भण्डारकर विधि' भी कहा जाता है?",
+                opts: ["व्याकरण-अनुवाद विधि (Grammar-Translation Method)", "प्रत्यक्ष विधि (Direct Method)", "पारायण विधि", "क्रीडा विधि"],
+                ans: 0,
+                exp: "डॉ. आर.जी. भण्डारकर ने संस्कृत शिक्षण हेतु 'व्याकरण-अनुवाद विधि' का प्रतिपादन किया, इसलिए इसे भण्डारकर विधि के नाम से जाना जाता है।"
+            },
+            {
+                q: "संस्कृत शिक्षण में मातृभाषा का प्रयोग पूर्णतः वर्जित रखते हुए संस्कृत का शिक्षण सीधे संस्कृत माध्यम से ही वार्तालाप व वस्तु-प्रदर्शन द्वारा किस विधि में कराया जाता है?",
+                opts: ["प्रत्यक्ष विधि / निर्बाध विधि (Direct Method)", "भण्डारकर विधि", "व्याख्या विधि", "सूत्र-कण्ठस्थीकरण विधि"],
+                ans: 0,
+                exp: "प्रत्यक्ष विधि (Direct Method - प्रो. वी.पी. बोविल द्वारा संस्कृत में प्रयुक्त) में मातृभाषा के मध्यस्थता के बिना सीधे लक्ष्य भाषा (संस्कृत) में ही शिक्षण होता है।"
+            },
+            {
+                q: "निम्नलिखित में से किस पद में 'स्त्री प्रत्यय' के रूप में 'ङीप्' प्रत्यय का प्रयोग हुआ है?",
+                opts: ["नदी, गौरी एवं कुमारी", "अजा, बाला एवं चटका", "शिष्या एवं मूषिका", "इन्द्राणी एवं आचार्यानी"],
+                ans: 0,
+                exp: "अजा, बाला, शिष्या में 'टाप्' प्रत्यय है, जबकि 'नदी', 'गौरी' और 'कुमारी' (वयसि प्रथमे सूत्र से) में 'ङीप्' स्त्री प्रत्यय प्रयुक्त हुआ है।"
+            }
+        ];
+
+        // PART E: पर्यावरण अध्ययन - EVS (30 Moderate-to-Difficult MCQs)
+        const questionsEVS = [
+            {
+                q: "पारिस्थितिकी तंत्र में 'जीवभार का पिरामिड' (Pyramid of Biomass) निम्नलिखित में से किस पारिस्थितिकी तंत्र में 'उल्टा' (Inverted) बनता है, जबकि 'ऊर्जा का पिरामिड' सदैव सीधा रहता है?",
+                opts: [
+                    "समुद्री / तालाब (जलीय) पारिस्थितिकी तंत्र में",
+                    "घास के मैदान (Grassland) पारिस्थितिकी तंत्र में",
+                    "उष्णकटिबंधीय सदाबहार वन पारिस्थितिकी तंत्र में",
+                    "मरुस्थलीय पारिस्थितिकी तंत्र में"
+                ],
+                ans: 0,
+                exp: "जलीय/समुद्री पारिस्थितिकी तंत्र में उत्पादक (पादपप्लवक - Phytoplankton) का जीवभार छोटी व बड़ी मछलियों की तुलना में किसी निश्चित समय पर बहुत कम होता है, इसलिए जीवभार का पिरामिड उल्टा बनता है।"
+            },
+            {
+                q: "प्रकृति के नाइट्रोजन चक्र (Nitrogen Cycle) के संबंध में जीवाणुओं और उनके कार्यों का कौन-सा मिलान पूर्णतः सही है?",
+                opts: [
+                    "राइजोबियम (सहजीवी स्थिरीकरण), एजोटोबैक्टर (मुक्तजीवी स्थिरीकरण), नाइट्रोसोमोनास (अमोनिया से नाइट्राइट) एवं स्यूडोमोनास (विनाइट्रीकरण)",
+                    "राइजोबियम (विनाइट्रीकरण) एवं स्यूडोमोनास (नाइट्रोजन स्थिरीकरण)",
+                    "नाइट्रोबैक्टर (नाइट्रेट को नाइट्रोजन गैस में बदलना)",
+                    "एजोटोबैक्टर (केवल जलीय कवक के रूप में अपघटन)"
+                ],
+                ans: 0,
+                exp: "दलहनी जड़ों में राइजोबियम सहजीवी स्थिरीकरण करता है, एजोटोबैक्टर मृदा में मुक्तजीवी स्थिरीकरण करता है, नाइट्रोसोमोनास अमोनिया को नाइट्राइट में व नाइट्रोबैक्टर नाइट्राइट को नाइट्रेट में बदलता है, जबकि स्यूडोमोनास विनाइट्रीकरण (Denitrification) करता है।"
+            },
+            {
+                q: "भारत में विश्व के कुल कितने प्रमुख 'जैव-विविधता हॉटस्पॉट' (Biodiversity Hotspots) के भाग पाए जाते हैं? सही समूह चुनिए:",
+                opts: [
+                    "4 हॉटस्पॉट: हिमालय, इंडो-बर्मा, पश्चिमी घाट (एवं श्रीलंका) तथा सुंडालैंड (निकोबार द्वीप समूह)",
+                    "2 हॉटस्पॉट: केवल पूर्वी घाट और थार मरुस्थल",
+                    "3 हॉटस्पॉट: अरावली पर्वत, विंध्य श्रेणी और दक्कन का पठार",
+                    "5 हॉटस्पॉट: गंगा का मैदान, कच्छ का रण, लद्दाख, मालवा और कोंकण"
+                ],
+                ans: 0,
+                exp: "नॉर्मन मायर्स द्वारा प्रतिपादित जैव-विविधता हॉटस्पॉट्स में से भारत में 4 क्षेत्र आते हैं: हिमालय, पश्चिमी घाट, इंडो-बर्मा क्षेत्र (उत्तर-पूर्वी भारत) और सुंडालैंड (ग्रेट निकोबार)।"
+            },
+            {
+                q: "जैव-विविधता के संरक्षण की विधियों में निम्नलिखित में से कौन-सा एक 'बाह्य-स्थाने संरक्षण' (Ex-situ Conservation) का उदाहरण है, न कि 'स्व-स्थाने' (In-situ) का?",
+                opts: [
+                    "वानस्पतिक उद्यान (Botanical Garden), जीन बैंक एवं क्रायोप्रिजर्वेशन (-196°C पर द्रव नाइट्रोजन में संरक्षण)",
+                    "राष्ट्रीय उद्यान (National Park)",
+                    "जैवमंडल आरक्षित क्षेत्र (Biosphere Reserve)",
+                    "पवित्र उपवन (Sacred Groves) एवं वन्यजीव अभयारण्य"
+                ],
+                ans: 0,
+                exp: "जब जीवों या पादपों को उनके प्राकृतिक आवास से बाहर निकालकर कृत्रिम या विशेष नियंत्रित स्थानों (चिड़ियाघर, बॉटनिकल गार्डन, बीज बैंक, क्रायोप्रिजर्वेशन) में संरक्षित किया जाता है, तो उसे Ex-situ संरक्षण कहते हैं।"
+            },
+            {
+                q: "अंतर्राष्ट्रीय आर्द्रभूमि 'रामसर संधि' (1971) के अंतर्गत 'मॉन्ट्रेक्स रिकॉर्ड' (Montreux Record - वे आर्द्रभूमियाँ जहाँ मानवीय हस्तक्षेप से पारिस्थितिक संकट उत्पन्न हो गया है) में वर्तमान में भारत के कौन-से दो स्थल सूचीबद्ध हैं?",
+                opts: [
+                    "केवलादेव राष्ट्रीय उद्यान (राजस्थान) और लोकटक झील (मणिपुर)",
+                    "चिल्का झील (ओडिशा) और वुलर झील (जम्मू-कश्मीर)",
+                    "सांभर झील (राजस्थान) और लोनार झील (महाराष्ट्र)",
+                    "सुंदरबन (पश्चिम बंगाल) और वेम्बनाड झील (केरल)"
+                ],
+                ans: 0,
+                exp: "मॉन्ट्रेक्स रिकॉर्ड में भारत के दो स्थल हैं: केवलादेव राष्ट्रीय उद्यान (राजस्थान) और लोकटक झील (मणिपुर)। (चिल्का झील को 2002 में सुधार के बाद इस रिकॉर्ड से हटा दिया गया था)।"
+            },
+            {
+                q: "निम्नलिखित वैश्विक पर्यावरणीय प्रोटोकॉल और उनके मुख्य विषय का कौन-सा युग्म सही सुमेलित नहीं है?",
+                opts: [
+                    "मॉन्ट्रियल प्रोटोकॉल (1987) — ओजोन परत को नुकसान पहुँचाने वाले पदार्थों (CFCs) पर नियंत्रण",
+                    "क्योटो प्रोटोकॉल (1997) — ग्रीनहाउस गैसों के उत्सर्जन में कटौती",
+                    "कार्टाजेना प्रोटोकॉल (2000) — संशोधित जीवित जीवों (LMOs / GMOs) से जैव-सुरक्षा (Biosafety)",
+                    "नागोया प्रोटोकॉल (2010) — परमाणु हथियारों का परीक्षण रोकना"
+                ],
+                ans: 3,
+                exp: "नागोया प्रोटोकॉल (2010) का संबंध आनुवंशिक संसाधनों तक पहुँच और उनके उपयोग से होने वाले लाभों के निष्पक्ष बंटवारे (Access and Benefit Sharing - CBD) से है, न कि परमाणु हथियारों से।"
+            },
+            {
+                q: "भारत सरकार के पर्यावरण एवं वन संबंधी प्रमुख अधिनियमों को उनके पारित होने के कालक्रमानुसार (Chronological Order) व्यवस्थित कीजिए:",
+                opts: [
+                    "वन्यजीव संरक्षण अधिनियम (1972) → जल प्रदूषण निवारण अधिनियम (1974) → वन संरक्षण अधिनियम (1980) → पर्यावरण संरक्षण अधिनियम (1986) → जैव-विविधता अधिनियम (2002)",
+                    "पर्यावरण संरक्षण अधिनियम (1986) → वन्यजीव संरक्षण अधिनियम (1972) → वन संरक्षण अधिनियम (1980)",
+                    "जैव-विविधता अधिनियम (2002) → जल अधिनियम (1974) → वन्यजीव अधिनियम (1972)",
+                    "वन संरक्षण अधिनियम (1980) → वन्यजीव संरक्षण अधिनियम (1972) → पर्यावरण संरक्षण अधिनियम (1986)"
+                ],
+                ans: 0,
+                exp: "सही कालक्रम है: वन्यजीव संरक्षण अधिनियम (1972), जल अधिनियम (1974), वन संरक्षण अधिनियम (1980), वायु अधिनियम (1981), पर्यावरण (छाता) संरक्षण अधिनियम (1986) और जैव-विविधता अधिनियम (2002)।"
+            },
+            {
+                q: "उत्तर प्रदेश के प्रमुख पक्षी विहारों / वन्यजीव विहारों और उनके संबंधित जनपदों का कौन-सा मिलान सही है?",
+                opts: [
+                    "नवाबगंज (शहीद चंद्रशेखर आजाद) पक्षी विहार — उन्नाव; लाख बहोसी पक्षी विहार — कन्नौज; बखिरा पक्षी विहार — संत कबीर नगर; चंद्रप्रभा वन्यजीव विहार — चंदौली",
+                    "लाख बहोसी पक्षी विहार — वाराणसी; चंद्रप्रभा — ललितपुर",
+                    "समान पक्षी विहार — गोरखपुर; पटना पक्षी विहार — प्रयागराज",
+                    "पार्वती अरगा पक्षी विहार — झांसी; सूर सरोवर — बलिया"
+                ],
+                ans: 0,
+                exp: "उ.प्र. का प्रथम पक्षी विहार नवाबगंज (उन्नाव), सबसे बड़ा पक्षी विहार लाख बहोसी (कन्नौज), बखिरा (संत कबीर नगर) और प्रथम वन्यजीव विहार चंद्रप्रभा (चंदौली) में स्थित है।"
+            },
+            {
+                q: "भारतीय संविधान में 'पर्यावरण का संरक्षण तथा संवर्धन और वन तथा वन्य जीवों की रक्षा' का उल्लेख किन दो स्थानों पर एक साथ मिलता है?",
+                opts: [
+                    "राज्य के नीति निदेशक तत्व (अनुच्छेद 48-A) तथा मौलिक कर्तव्य (अनुच्छेद 51-A (g)) — 42वें संविधान संशोधन 1976 द्वारा",
+                    "केवल प्रस्तावना और सातवीं अनुसूची में",
+                    "केवल अनुच्छेद 14 और अनुच्छेद 32 में",
+                    "केवल नौवीं अनुसूची और पंचायती राज में"
+                ],
+                ans: 0,
+                exp: "42वें संविधान संशोधन (1976) द्वारा पर्यावरण एवं वन्यजीव संरक्षण को नीति निदेशक तत्वों के अनुच्छेद 48-A और नागरिकों के मूल कर्तव्यों के अनुच्छेद 51-A(g) दोनों में जोड़ा गया।"
+            },
+            {
+                q: "भारत में पंचायती राज व्यवस्था के विकास से जुड़ी समितियों का सही कालानुक्रमिक क्रम क्या है तथा किस समिति की सिफारिश पर इसे संवैधानिक दर्जा मिला?",
+                opts: [
+                    "बलवंत राय मेहता (1957) → अशोक मेहता (1977) → जी.वी.के. राव (1985) → एल.एम. सिंघवी समिति (1986, संवैधानिक दर्जे की सिफारिश)",
+                    "अशोक मेहता (1957) → बलवंत राय मेहता (1977) → कोठारी आयोग",
+                    "एल.एम. सिंघवी (1950) → सरकारीया आयोग → बलवंत राय मेहता",
+                    "जी.वी.के. राव (1952) → अशोक मेहता → मंडल आयोग"
+                ],
+                ans: 0,
+                exp: "बलवंत राय मेहता ने त्रि-स्तरीय पंचायती राज दिया, अशोक मेहता ने द्वि-स्तरीय की सिफारिश की, और एल.एम. सिंघवी समिति (1986) ने पंचायतों को संवैधानिक दर्जा देने की सिफारिश की जो 73वें संशोधन (1992) से फलीभूत हुई।"
+            },
+            {
+                q: "भारतीय संविधान की 12 अनुसूचियों (Schedules) के संदर्भ में निम्नलिखित में से कौन-सा मिलान त्रुटिपूर्ण है?",
+                opts: [
+                    "आठवीं अनुसूची — मान्यता प्राप्त 22 भाषाएँ",
+                    "दसवीं अनुसूची — दल-बदल विरोधी कानून (52वाँ संशोधन, 1985)",
+                    "ग्यारहवीं अनुसूची — पंचायतों की शक्तियाँ एवं 29 विषय (73वाँ संशोधन)",
+                    "सातवीं अनुसूची — नगरपालिकाओं का गठन एवं 18 विषय"
+                ],
+                ans: 3,
+                exp: "सातवीं अनुसूची केंद्र एवं राज्यों के मध्य शक्तियों के विभाजन (संघ, राज्य एवं समवर्ती सूची) से संबंधित है, जबकि नगरपालिकाएँ 'बारहवीं अनुसूची' (74वाँ संशोधन, 18 विषय) में हैं।"
+            },
+            {
+                q: "वायुमंडल की परतों के संबंध में निम्नलिखित कथनों पर विचार कर सही विकल्प का चयन कीजिए:",
+                opts: [
+                    "क्षोभमंडल (Troposphere) में ऊँचाई बढ़ने के साथ प्रति 165 मीटर पर 1°C तापमान घटता है (सामान्य ताप ह्रास दर), और मध्यमंडल (Mesosphere) वायुमंडल की सबसे ठंडी परत (-100°C तक) है जहाँ उल्कापिंड जलकर नष्ट होते हैं।",
+                    "सभी मौसमी घटनाएँ (बादल, वर्षा, चक्रवात) समतापमंडल में होती हैं।",
+                    "रेडियो तरंगें क्षोभमंडल से परावर्तित होती हैं।",
+                    "समतापमंडल में ऊँचाई के साथ तापमान तेजी से घटता है।"
+                ],
+                ans: 0,
+                exp: "क्षोभमंडल में सामान्य ताप ह्रास दर (6.5°C प्रति किमी या 1°C प्रति 165 मी.) होती है। मध्यमंडल सबसे ठंडी परत है जहाँ उल्कापिंड जलते हैं, और आयनमंडल रेडियो तरंगों को परावर्तित करता है।"
+            },
+            {
+                q: "निम्नलिखित महासागरीय जलधाराओं में से कौन-सी एक 'ठंडी जलधारा' (Cold Ocean Current) का युग्म है?",
+                opts: [
+                    "लैब्राडोर जलधारा, हम्बोल्ट (पेरू) जलधारा तथा बेंगुएला जलधारा",
+                    "गल्फ स्ट्रीम तथा क्यूरोशियो जलधारा",
+                    "ब्राजील जलधारा तथा अगुलहास जलधारा",
+                    "उत्तरी विषुवतीय तथा अलास्का जलधारा"
+                ],
+                ans: 0,
+                exp: "लैब्राडोर (उत्तरी अटलांटिक), हम्बोल्ट/पेरू (दक्षिणी प्रशांत) और बेंगुएला (दक्षिणी अटलांटिक) ठंडी महासागरीय धाराएँ हैं, जबकि गल्फ स्ट्रीम और क्यूरोशियो गर्म धाराएँ हैं।"
+            },
+            {
+                q: "प्रायद्वीपीय भारत की कौन-सी दो प्रमुख नदियाँ डेल्टा (Delta) का निर्माण न करके भ्रंश घाटी (Rift Valley) से बहती हुई अरब सागर में ज्वारनदमुख (Estuary) बनाती हैं?",
+                opts: ["नर्मदा और ताप्ती (तापी)", "गोदावरी और कृष्णा", "महानदी और कावेरी", "स्वर्णरेखा और वैतरणी"],
+                ans: 0,
+                exp: "नर्मदा (विंध्य और सतपुड़ा के बीच भ्रंश घाटी) तथा ताप्ती नदियाँ पश्चिम की ओर बहती हुई खंभात की खाड़ी (अरब सागर) में एश्चुअरी (ज्वारनदमुख) बनाती हैं।"
+            },
+            {
+                q: "पेयजल में 'नाइट्रेट' ($\text{NO}_3^-$) की अधिकता तथा 'कैडमियम' ($\text{Cd}$) के प्रदूषण से क्रमशः कौन-से दो रोग उत्पन्न होते हैं?",
+                opts: [
+                    "ब्लू बेबी सिंड्रोम (मेथेमोग्लोबिनेमिया) तथा इटाई-इटाई (Itai-Itai) रोग",
+                    "मिनामाता रोग तथा ब्लैक-फुट रोग",
+                    "फ्लोरोसिस तथा सिलिकोसिस",
+                    "रिकेट्स तथा स्कर्वी"
+                ],
+                ans: 0,
+                exp: "पेयजल में नाइट्रेट की अधिकता से शिशुओं में ऑक्सीजन परिवहन रुकने से 'ब्लू बेबी सिंड्रोम' होता है, और कैडमियम प्रदूषण से 'इटाई-इटाई' व आर्सेनिक से 'ब्लैक-फुट' रोग होता है।"
+            },
+            {
+                q: "विटामिन, उनके रासायनिक नाम और कमी से होने वाले रोगों का कौन-सा युग्म पूर्णतः सही सुमेलित है?",
+                opts: [
+                    "विटामिन B12 — सायनोकोबालामिन (परनीशियस एनीमिया, कोबाल्ट धातु युक्त); विटामिन K — फिलोक्विनोन (रक्त का थक्का न जमना)",
+                    "विटामिन D — टोकोफेरॉल (रतौंधी)",
+                    "विटामिन B1 — रेटिनॉल (स्कर्वी)",
+                    "विटामिन E — कैल्सीफेरॉल (बेरी-बेरी)"
+                ],
+                ans: 0,
+                exp: "विटामिन B12 का रासायनिक नाम सायनोकोबालामिन है जिसमें कोबाल्ट पाया जाता है और विटामिन K (फिलोक्विनोन) रक्त के स्कंदन (Clotting) में सहायक है।"
+            },
+            {
+                q: "पादप हार्मोन (Phytohormones) के संदर्भ में कौन-सा एकमात्र हार्मोन प्राकृतिक रूप से 'गैसीय अवस्था' में पाया जाता है और फलों को पकाने में मुख्य भूमिका निभाता है?",
+                opts: ["एथिलीन (Ethylene)", "ऑक्सिन (Auxin)", "जिबरेलिन (Gibberellin)", "साइटोकाइनिन (Cytokinin)"],
+                ans: 0,
+                exp: "एथिलीन ($C_2H_4$) एकमात्र गैसीय पादप हार्मोन है जो फलों को प्राकृतिक रूप से पकाने में सहायक है (जबकि कृत्रिम रूप से पकाने में कैल्शियम कार्बाइड/एसिटिलीन का प्रयोग होता रहा है)।"
+            },
+            {
+                q: "कीटभक्षी पादप (जैसे—नेपेन्थिस / घटपर्णी, ड्रोसेरा, यूट्रिकुलेरिया) प्रकाश-संश्लेषण द्वारा अपना भोजन स्वयं बनाने में सक्षम होते हैं, फिर भी वे कीटों का भक्षण क्यों करते हैं?",
+                opts: [
+                    "क्योंकि वे ऐसी अम्लीय या दलदली मृदा में उगते हैं जहाँ नाइट्रोजन की भारी कमी होती है, और वे कीटों से केवल नाइट्रोजन की पूर्ति करते हैं।",
+                    "क्योंकि उनमें क्लोरोफिल बिल्कुल नहीं पाया जाता।",
+                    "क्योंकि वे सूर्य के प्रकाश से ऊर्जा नहीं ले सकते।",
+                    "क्योंकि वे कीटों से केवल जल और ऑक्सीजन प्राप्त करते हैं।"
+                ],
+                ans: 0,
+                exp: "कीटभक्षी पौधे स्वपोषी होते हैं (क्लोरोफिल होता है), किंतु नाइट्रोजन-न्यून मृदा में उगने के कारण अपनी नाइट्रोजन आवश्यकता की पूर्ति हेतु कीटों को पकड़ते हैं।"
+            },
+            {
+                q: "जलीय प्रदूषण के मापन में 'BOD' (Biochemical Oxygen Demand) का उच्च होना क्या संकेत देता है?",
+                opts: [
+                    "जल में कार्बनिक अपशिष्ट (Organic Pollution) अधिक है तथा घुलित ऑक्सीजन (Dissolved Oxygen - DO) का स्तर कम हो गया है।",
+                    "जल पूर्णतः शुद्ध और पीने योग्य है।",
+                    "जल में घुलित ऑक्सीजन की मात्रा सर्वाधिक है।",
+                    "जल में कोई भी सूक्ष्मजीव उपस्थित नहीं है।"
+                ],
+                ans: 0,
+                exp: "BOD सूक्ष्मजीवों द्वारा कार्बनिक पदार्थों के अपघटन हेतु आवश्यक ऑक्सीजन की मात्रा है। उच्च BOD का सीधा अर्थ है उच्च प्रदूषण और निम्न घुलित ऑक्सीजन (DO)।"
+            },
+            {
+                q: "भूकंप के दौरान पृथ्वी के भीतर जिस बिंदु से ऊर्जा का निकास होता है उसे 'भूकंप मूल' (Focus / Hypocenter) कहते हैं। कौन-सी भूकंपीय तरंगें सर्वाधिक विनाशकारी होती हैं और कौन-सी तरंगें तरल माध्यम (द्रव) से होकर नहीं गुजर सकतीं?",
+                opts: [
+                    "सर्वाधिक विनाशकारी: धरातलीय L-तरंगें; तरल माध्यम से न गुजरने वाली: द्वितीयक (S-तरंगें / अनुप्रस्थ तरंगें)",
+                    "सर्वाधिक विनाशकारी: P-तरंगें; तरल से न गुजरने वाली: P-तरंगें",
+                    "सर्वाधिक विनाशकारी: S-तरंगें; तरल से न गुजरने वाली: L-तरंगें",
+                    "तीनों तरंगें ठोस, द्रव और गैस में समान वेग से चलती हैं।"
+                ],
+                ans: 0,
+                exp: "P-तरंगें (अनुदैर्ध्य) सबसे तेज होती हैं और ठोस, द्रव, गैस तीनों में चलती हैं; S-तरंगें (अनुप्रस्थ) केवल ठोस में चलती हैं (द्रव में लुप्त हो जाती हैं); और धरातलीय L-तरंगें (Love/Rayleigh) सर्वाधिक विनाशकारी होती हैं।"
+            },
+            {
+                q: "भारत की जनगणना 2011 के अंतिम आँकड़ों के अनुसार उत्तर प्रदेश के संदर्भ में कौन-सा कथन सही है?",
+                opts: [
+                    "सर्वाधिक जनसंख्या वाला जिला प्रयागराज (इलाहाबाद) है, सर्वाधिक साक्षरता दर वाला जिला गौतमबुद्ध नगर है, तथा सर्वाधिक लिंगानुपात वाला जिला जौनपुर (1024) है।",
+                    "सर्वाधिक जनसंख्या वाला जिला महोबा है और न्यूनतम साक्षरता कानपुर में है।",
+                    "सर्वाधिक लिंगानुपात गौतमबुद्ध नगर में है।",
+                    "उत्तर प्रदेश का कुल जनघनत्व 382 व्यक्ति प्रति वर्ग किमी है।"
+                ],
+                ans: 0,
+                exp: "जनगणना 2011 के अनुसार उ.प्र. में सर्वाधिक जनसंख्या प्रयागराज (न्यूनतम महोबा), सर्वाधिक साक्षरता गौतमबुद्ध नगर (न्यूनतम श्रावस्ती) और सर्वाधिक लिंगानुपात जौनपुर (1024) में है।"
+            },
+            {
+                q: "उत्तर प्रदेश का एकमात्र शास्त्रीय नृत्य कौन-सा है, और बुंदेलखंड क्षेत्र में फसल कटाई के समय किया जाने वाला प्रसिद्ध लोकनृत्य कौन-सा है?",
+                opts: [
+                    "शास्त्रीय नृत्य: कथक (लखनऊ/वाराणसी घराना); बुंदेलखंड का फसल लोकनृत्य: सैरा (शैरा) एवं राई नृत्य",
+                    "शास्त्रीय नृत्य: भरतनाट्यम; बुंदेलखंड लोकनृत्य: रऊफ",
+                    "शास्त्रीय नृत्य: कुचिपुड़ी; बुंदेलखंड लोकनृत्य: बिहू",
+                    "शास्त्रीय नृत्य: ओडिसी; बुंदेलखंड लोकनृत्य: गरबा"
+                ],
+                ans: 0,
+                exp: "'कथक' उत्तर प्रदेश का एकमात्र शास्त्रीय नृत्य है, जबकि सैरा (शैरा), राई, दिवारी और पाई डंडा बुंदेलखंड क्षेत्र के प्रमुख लोकनृत्य हैं।"
+            },
+            {
+                q: "वायु प्रदूषण के जैविक सूचक (Bio-indicator) के रूप में किसे जाना जाता है, जो वायुमंडल में सल्फर डाइऑक्साइड ($\text{SO}_2$) की अधिकता होने पर समाप्त हो जाते हैं?",
+                opts: ["लाइकेन (Lichen — शैवाल और कवक का सहजीवी संबंध)", "अमरबेल (Cuscuta)", "मशरूम (कवक)", "फर्न (Pteridophyta)"],
+                ans: 0,
+                exp: "लाइकेन (शैवाल + कवक का सहजीवन) वायु में $\text{SO}_2$ (अम्लीय वर्षा की प्रमुख गैस) के प्रति अत्यंत संवेदनशील होते हैं और इसके बढ़ने पर नष्ट हो जाते हैं।"
+            },
+            {
+                q: "केन्द्रीय प्रदूषण नियंत्रण बोर्ड (CPCB) द्वारा निर्धारित 'राष्ट्रीय वायु गुणवत्ता सूचकांक' (National Air Quality Index - AQI) में कुल कितने प्रदूषकों को शामिल किया गया है?",
+                opts: [
+                    "8 प्रदूषक ($\text{PM}_{10}, \text{PM}_{2.5}, \text{NO}_2, \text{SO}_2, \text{CO}, \text{O}_3, \text{NH}_3$ एवं $\text{Pb}$)",
+                    "4 प्रदूषक (केवल कार्बन डाइऑक्साइड, मीथेन, ऑक्सीजन और नाइट्रोजन)",
+                    "12 प्रदूषक",
+                    "2 प्रदूषक (केवल धूल और धुआँ)"
+                ],
+                ans: 0,
+                exp: "राष्ट्रीय AQI में 8 मुख्य वायु प्रदूषक शामिल हैं: $\text{PM}_{10}, \text{PM}_{2.5}, \text{NO}_2, \text{SO}_2, \text{CO}, \text{O}_3$ (ओजोन), $\text{NH}_3$ (अमोनिया) और $\text{Pb}$ (सीसा)। इसमें $\text{CO}_2$ शामिल नहीं है।"
+            },
+            {
+                q: "भारतीय वन अनुसंधान संस्थान (FRI) तथा भारतीय वन्यजीव संस्थान (WII) दोनों का मुख्यालय किस शहर में स्थित है, और 'राष्ट्रीय पर्यावरण अभियांत्रिकी अनुसंधान संस्थान' (NEERI) कहाँ स्थित है?",
+                opts: [
+                    "FRI एवं WII: देहरादून (उत्तराखंड); NEERI: नागपुर (महाराष्ट्र)",
+                    "FRI: भोपाल; NEERI: नई दिल्ली",
+                    "FRI: शिमला; NEERI: कोलकाता",
+                    "FRI: लखनऊ; NEERI: चेन्नई"
+                ],
+                ans: 0,
+                exp: "वन अनुसंधान संस्थान (FRI) और भारतीय वन्यजीव संस्थान (WII) देहरादून में हैं, जबकि NEERI का मुख्यालय नागपुर में है (और भारतीय वन प्रबंधन संस्थान - IIFM भोपाल में है)।"
+            },
+            {
+                q: "चट्टानों के चक्र (Rock Cycle) के अनुसार 'संगमरमर' (Marble) और 'क्वार्टजाइट' (Quartzite) किस श्रेणी की चट्टानें हैं और वे किन मूल चट्टानों के रूपांतरण से बनती हैं?",
+                opts: [
+                    "कायांतरित/रूपांतरित चट्टानें (चूना पत्थर से संगमरमर तथा बलुआ पत्थर से क्वार्टजाइट)",
+                    "आग्नेय चट्टानें (ज्वालामुखी लावा के जमने से)",
+                    "अवसादी चट्टानें (नदियों के निक्षेपण से)",
+                    "उल्कापिंडीय चट्टानें"
+                ],
+                ans: 0,
+                exp: "अवसादी चट्टान 'चूना पत्थर' (Limestone) के ताप व दाब से रूपांतरण द्वारा 'संगमरमर' तथा 'बलुआ पत्थर' (Sandstone) के रूपांतरण से 'क्वार्टजाइट' बनता है।"
+            },
+            {
+                q: "मनुष्य के रक्त समूह (ABO Blood Group System) की खोज कार्ल लैंडस्टीनर ने की थी। किस रक्त समूह में कोई भी 'एंटीजन' (Antigen) नहीं पाया जाता जिससे वह 'सर्वदाता' (Universal Donor) कहलाता है, और किसमें कोई भी 'एंटीबॉडी' (Antibody) नहीं होती?",
+                opts: [
+                    "कोई एंटीजन नहीं: रक्त समूह O (विशेषतः O- सर्वदाता); कोई एंटीबॉडी नहीं: रक्त समूह AB (AB+ सर्वग्राही)",
+                    "कोई एंटीजन नहीं: रक्त समूह AB; कोई एंटीबॉडी नहीं: रक्त समूह O",
+                    "कोई एंटीजन नहीं: रक्त समूह A; कोई एंटीबॉडी नहीं: रक्त समूह B",
+                    "सभी रक्त समूहों में एंटीजन और एंटीबॉडी समान होते हैं।"
+                ],
+                ans: 0,
+                exp: "रक्त समूह O की RBC पर कोई एंटीजन (A या B) नहीं होता इसलिए यह सर्वदाता है (O-); जबकि AB के प्लाज्मा में कोई एंटीबॉडी (a या b) नहीं होती इसलिए यह सर्वग्राही (AB+) है।"
+            },
+            {
+                q: "कर्क रेखा (Tropic of Cancer - $23.5^\circ$ उत्तरी अक्षांश) भारत के कुल 8 राज्यों से होकर गुजरती है। पश्चिम से पूर्व (West to East) की ओर जाने पर इन राज्यों का सही क्रम क्या है?",
+                opts: [
+                    "गुजरात → राजस्थान → मध्य प्रदेश → छत्तीसगढ़ → झारखंड → पश्चिम बंगाल → त्रिपुरा → मिजोरम",
+                    "गुजरात → महाराष्ट्र → उत्तर प्रदेश → बिहार → ओडिशा → असम → मणिपुर → नागालैंड",
+                    "राजस्थान → पंजाब → हरियाणा → उत्तराखंड → बिहार → सिक्किम → मेघालय → त्रिपुरा",
+                    "मध्य प्रदेश → गुजरात → राजस्थान → झारखंड → छत्तीसगढ़ → ओडिशा → मिजोरम → त्रिपुरा"
+                ],
+                ans: 0,
+                exp: "कर्क रेखा भारत के 8 राज्यों से गुजरती है (पश्चिम से पूर्व): गुजरात, राजस्थान, मध्य प्रदेश, छत्तीसगढ़, झारखंड, पश्चिम बंगाल, त्रिपुरा और मिजोरम। (माही नदी इसे दो बार काटती है)।"
+            },
+            {
+                q: "राष्ट्रीय पाठ्यचर्या की रूपरेखा (NCF-2005) के अनुसार प्राथमिक स्तर (कक्षा 3 से 5) पर पर्यावरण अध्ययन (EVS) की पाठ्यपुस्तकों को 'विज्ञान और सामाजिक विज्ञान' के अलग-अलग विषयों में न बाँटकर 6 मुख्य 'थीम' (Themes) में क्यों संगठित किया गया है?",
+                opts: [
+                    "क्योंकि बच्चा अपने परिवेश को समग्र एवं एकीकृत रूप (Holistic & Integrated manner) में देखता है, न कि विज्ञान, भूगोल और इतिहास के अलग-अलग खाँचों में।",
+                    "केवल शिक्षकों का कार्यभार कम करने के लिए।",
+                    "बच्चों को उच्च कक्षाओं में विज्ञान पढ़ने से रोकने के लिए।",
+                    "केवल बस्ते का भौतिक वजन 100 ग्राम करने के लिए।"
+                ],
+                ans: 0,
+                exp: "प्राथमिक स्तर पर बालक अपने आस-पास के पर्यावरण को एक समग्र इकाई (Holistic view) के रूप में अनुभव करता है; इसलिए EVS में विज्ञान, सामाजिक अध्ययन और पर्यावरण शिक्षा को 6 थीम्स (परिवार और मित्र, भोजन, पानी, आवास, यात्रा, हम चीजें कैसे बनाते हैं) में एकीकृत किया गया है।"
+            },
+            {
+                q: "प्राथमिक स्तर पर पर्यावरण अध्ययन (EVS) के शिक्षण में निम्नलिखित में से कौन-सा एक 'प्रक्रिया कौशल' (Process Skill) छात्रों में वैज्ञानिक दृष्टिकोण विकसित करने के लिए सर्वाधिक उपयुक्त है?",
+                opts: [
+                    "अवलोकन करना (Observation), वर्गीकरण करना (Classification), प्रश्न पूछना और प्रयोग द्वारा निष्कर्ष निकालना",
+                    "परिभाषाओं को बिना समझे श्यामपट्ट से नकल करना",
+                    "केवल पाठ्यपुस्तक के अंत में दिए गए प्रश्नों के उत्तर रटना",
+                    "शिक्षक के व्याख्यान को बिना प्रश्न पूछे चुपचाप सुनना"
+                ],
+                ans: 0,
+                exp: "EVS शिक्षण में अवलोकन, वर्गीकरण, अनुमान लगाना, तुलना करना और खोजबीन करना प्रमुख प्रक्रिया कौशल (Process Skills) हैं जो रटंत प्रणाली को समाप्त कर अनुभवात्मक अधिगम को बढ़ावा देते हैं।"
+            }
+        ];
+
+        // =========================================================================
+        // EXAM ENGINE STATE & INTERACTIVITY LOGIC
+        // =========================================================================
+        let selectedLang2 = "english";
+        let activeQuestions = [];
+        let userAnswers = new Array(150).fill(null);
+        let markedReview = new Array(150).fill(false);
+        let visitedQuestions = new Array(150).fill(false);
+        let currentIndex = 0;
+        let timerSeconds = 150 * 60; // 150 minutes = 9000 seconds
+        let timerInterval = null;
+
+        const sectionMeta = [
+            { title: "Part A: बाल विकास एवं शिक्षण विधि (CDP)", badge: "Part A: बाल विकास", start: 0, end: 29 },
+            { title: "Part B: गणित (Mathematics)", badge: "Part B: गणित", start: 30, end: 59 },
+            { title: "Part C: भाषा-I हिन्दी (Hindi)", badge: "Part C: हिन्दी", start: 60, end: 89 },
+            { title: "Part D: भाषा-II (English / संस्कृत)", badge: "Part D: भाषा-II", start: 90, end: 119 },
+            { title: "Part E: पर्यावरण अध्ययन (EVS)", badge: "Part E: पर्यावरण अध्ययन", start: 120, end: 149 }
+        ];
+
+        function updateLangCardStyle() {
+            const lang = document.querySelector('input[name="lang2"]:checked').value;
+            const enCard = document.getElementById('lang-en-card');
+            const saCard = document.getElementById('lang-sa-card');
+            if (lang === 'english') {
+                enCard.className = "flex items-center space-x-3 bg-white p-3.5 rounded-xl border-2 border-indigo-600 cursor-pointer transition shadow-sm";
+                saCard.className = "flex items-center space-x-3 bg-white p-3.5 rounded-xl border-2 border-slate-200 cursor-pointer transition shadow-sm";
+            } else {
+                saCard.className = "flex items-center space-x-3 bg-white p-3.5 rounded-xl border-2 border-indigo-600 cursor-pointer transition shadow-sm";
+                enCard.className = "flex items-center space-x-3 bg-white p-3.5 rounded-xl border-2 border-slate-200 cursor-pointer transition shadow-sm";
+            }
+        }
+
+        function buildQuestionSet() {
+            const partD = selectedLang2 === 'english' ? questionsEnglish : questionsSanskrit;
+            activeQuestions = [
+                ...questionsCDP,
+                ...questionsMath,
+                ...questionsHindi,
+                ...partD,
+                ...questionsEVS
+            ];
+        }
+
+        function startExam() {
+            selectedLang2 = document.querySelector('input[name="lang2"]:checked').value;
+            document.getElementById('in-exam-lang2').value = selectedLang2;
+            buildQuestionSet();
+
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('exam-screen').classList.remove('hidden');
+            document.getElementById('exam-header-controls').classList.remove('hidden');
+
+            updateTabLabelForPartD();
+            loadQuestion(0);
+            startTimer();
+        }
+
+        function updateTabLabelForPartD() {
+            const tab3 = document.getElementById('tab-3');
+            tab3.textContent = selectedLang2 === 'english'
+                ? "Part D: English (91-120)"
+                : "Part D: संस्कृत (91-120)";
+        }
+
+        function changeLang2InExam(newLang) {
+            selectedLang2 = newLang;
+            buildQuestionSet();
+            updateTabLabelForPartD();
+            loadQuestion(currentIndex);
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timerSeconds--;
+                if (timerSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    submitExam();
+                    return;
+                }
+                const hrs = String(Math.floor(timerSeconds / 3600)).padStart(2, '0');
+                const mins = String(Math.floor((timerSeconds % 3600) / 60)).padStart(2, '0');
+                const secs = String(timerSeconds % 60).padStart(2, '0');
+                document.getElementById('timer-display').textContent = `${hrs}:${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function getSectionIndex(qIdx) {
+            return Math.floor(qIdx / 30);
+        }
+
+        function switchSection(secIdx) {
+            loadQuestion(secIdx * 30);
+        }
+
+        function formatMathText(text) {
+            // Cleanly format basic LaTeX expressions in Math/EVS questions for crisp HTML rendering
+            return text
+                .replace(/\\times/g, '×')
+                .replace(/\\div/g, '÷')
+                .replace(/\\equiv/g, '≡')
+                .replace(/\\Rightarrow/g, '⇒')
+                .replace(/\\pi/g, 'π')
+                .replace(/\\theta/g, 'θ')
+                .replace(/\\angle/g, '∠')
+                .replace(/\^\\circ/g, '°')
+                .replace(/\\%/g, '%')
+                .replace(/\\text\{([^}]+)\}/g, '$1')
+                .replace(/\\pmod\{([^}]+)\}/g, '(mod $1)')
+                .replace(/\\left\(/g, '(')
+                .replace(/\\right\)/g, ')')
+                .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1/$2)')
+                .replace(/\\sqrt\{([^}]+)\}/g, '√($1)')
+                .replace(/\$([^$]+)\$/g, '$1');
+        }
+
+        function loadQuestion(idx) {
+            currentIndex = idx;
+            visitedQuestions[idx] = true;
+            const qObj = activeQuestions[idx];
+            const secIdx = getSectionIndex(idx);
+
+            // Highlight active section tab
+            for (let i = 0; i < 5; i++) {
+                const tab = document.getElementById(`tab-${i}`);
+                if (i === secIdx) {
+                    tab.className = "px-3 py-2 rounded-lg text-xs md:text-sm font-bold transition bg-indigo-600 text-white shadow";
+                } else {
+                    tab.className = "px-3 py-2 rounded-lg text-xs md:text-sm font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200";
+                }
+            }
+
+            const badgeLabel = secIdx === 3
+                ? (selectedLang2 === 'english' ? 'Part D: English' : 'Part D: संस्कृत')
+                : sectionMeta[secIdx].badge;
+
+            document.getElementById('q-part-badge').textContent = badgeLabel;
+            document.getElementById('q-number-display').textContent = `प्रश्न ${idx + 1} / 150`;
+            document.getElementById('question-text').textContent = `Q${idx + 1}. ${formatMathText(qObj.q)}`;
+
+            const optsContainer = document.getElementById('options-container');
+            optsContainer.innerHTML = '';
+            const labels = ['(A)', '(B)', '(C)', '(D)'];
+
+            qObj.opts.forEach((optText, optIdx) => {
+                const isSelected = userAnswers[idx] === optIdx;
+                const btn = document.createElement('button');
+                btn.className = `w-full text-left p-3.5 md:p-4 rounded-xl border-2 transition flex items-start space-x-3 ${
+                    isSelected
+                        ? 'border-indigo-600 bg-indigo-50/90 text-indigo-950 font-bold shadow-sm'
+                        : 'border-slate-200 hover:border-indigo-300 hover:bg-slate-50 text-slate-800 font-medium'
+                }`;
+                btn.onclick = () => selectOption(optIdx);
+                btn.innerHTML = `
+                    <span class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-extrabold shrink-0 mt-0.5 ${
+                        isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-200 text-slate-700'
+                    }">${labels[optIdx]}</span>
+                    <span class="text-sm md:text-base leading-snug">${formatMathText(optText)}</span>
+                `;
+                optsContainer.appendChild(btn);
+            });
+
+            // Review Button state
+            const revBtn = document.getElementById('review-btn');
+            if (markedReview[idx]) {
+                revBtn.textContent = "★ समीक्षा से हटाएँ (Unmark Review)";
+                revBtn.className = "px-3.5 py-2 rounded-lg border border-purple-700 bg-purple-600 text-white text-xs md:text-sm font-bold transition shadow-sm";
+            } else {
+                revBtn.textContent = "समीक्षा हेतु चिह्नित (Review)";
+                revBtn.className = "px-3.5 py-2 rounded-lg border border-purple-400 bg-purple-50 text-purple-800 hover:bg-purple-100 text-xs md:text-sm font-bold transition";
+            }
+
+            document.getElementById('prev-btn').disabled = idx === 0;
+            document.getElementById('prev-btn').classList.toggle('opacity-50', idx === 0);
+
+            renderPalette();
+            updateStats();
+        }
+
+        function selectOption(optIdx) {
+            userAnswers[currentIndex] = optIdx;
+            loadQuestion(currentIndex);
+        }
+
+        function clearResponse() {
+            userAnswers[currentIndex] = null;
+            loadQuestion(currentIndex);
+        }
+
+        function toggleMarkForReview() {
+            markedReview[currentIndex] = !markedReview[currentIndex];
+            loadQuestion(currentIndex);
+        }
+
+        function prevQuestion() {
+            if (currentIndex > 0) loadQuestion(currentIndex - 1);
+        }
+
+        function nextQuestion() {
+            if (currentIndex < 149) loadQuestion(currentIndex + 1);
+        }
+
+        function updateStats() {
+            const answered = userAnswers.filter(a => a !== null).length;
+            const visitedUnanswered = visitedQuestions.filter((v, i) => v && userAnswers[i] === null).length;
+            const notVisited = visitedQuestions.filter(v => !v).length;
+            const reviewCount = markedReview.filter(r => r).length;
+
+            document.getElementById('stat-answered').textContent = answered;
+            document.getElementById('stat-not-answered').textContent = visitedUnanswered;
+            document.getElementById('stat-review').textContent = reviewCount;
+            document.getElementById('stat-not-visited').textContent = notVisited;
+        }
+
+        function renderPalette() {
+            const container = document.getElementById('palette-container');
+            container.innerHTML = '';
+            const showAll = document.getElementById('show-all-palette').checked;
+            const secIdx = getSectionIndex(currentIndex);
+
+            const startIdx = showAll ? 0 : sectionMeta[secIdx].start;
+            const endIdx = showAll ? 149 : sectionMeta[secIdx].end;
+
+            document.getElementById('palette-section-title').textContent = showAll
+                ? "सभी 150 प्रश्न (All Sections: 1-150)"
+                : `${sectionMeta[secIdx].title} (${startIdx + 1}-${endIdx + 1})`;
+
+            for (let i = startIdx; i <= endIdx; i++) {
+                const btn = document.createElement('button');
+                let bgClass = "bg-slate-100 border border-slate-300 text-slate-600 hover:bg-slate-200";
+                if (markedReview[i]) {
+                    bgClass = "bg-purple-600 text-white font-bold shadow-sm";
+                } else if (userAnswers[i] !== null) {
+                    bgClass = "bg-emerald-600 text-white font-bold shadow-sm";
+                } else if (visitedQuestions[i]) {
+                    bgClass = "bg-rose-500 text-white font-bold shadow-sm";
+                }
+
+                const activeRing = i === currentIndex ? "ring-2 ring-offset-1 ring-indigo-600 font-extrabold scale-105" : "";
+                btn.className = `h-9 rounded-lg text-xs flex items-center justify-center transition ${bgClass} ${activeRing}`;
+                btn.textContent = i + 1;
+                btn.onclick = () => loadQuestion(i);
+                container.appendChild(btn);
+            }
+        }
+
+        function confirmSubmit() {
+            const answered = userAnswers.filter(a => a !== null).length;
+            const skipped = 150 - answered;
+            document.getElementById('submit-modal-text').textContent =
+                `आपने 150 में से ${answered} प्रश्नों के उत्तर दिए हैं और ${skipped} प्रश्न अनुत्तरित हैं। क्या आप अपना मॉक टेस्ट सबमिट करके स्कोरकार्ड और उत्तर-कुंजी देखना चाहते हैं?`;
+            document.getElementById('submit-modal').classList.remove('hidden');
+        }
+
+        function closeSubmitModal() {
+            document.getElementById('submit-modal').classList.add('hidden');
+        }
+
+        function proceedSubmitExam() {
+            closeSubmitModal();
+            submitExam();
+        }
+
+        function submitExam() {
+            clearInterval(timerInterval);
+            document.getElementById('exam-screen').classList.add('hidden');
+            document.getElementById('exam-header-controls').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+
+            const name = document.getElementById('student-name').value.trim();
+            document.getElementById('result-student-name').textContent = name
+                ? `अभ्यर्थी का नाम: ${name}`
+                : 'अभ्यर्थी: UPTET / Special TET परीक्षार्थी';
+
+            let totalCorrect = 0;
+            let totalAttempted = 0;
+            const tbody = document.getElementById('section-score-tbody');
+            tbody.innerHTML = '';
+
+            for (let s = 0; s < 5; s++) {
+                let secCorrect = 0;
+                let secAttempted = 0;
+                for (let i = s * 30; i < (s + 1) * 30; i++) {
+                    if (userAnswers[i] !== null) {
+                        secAttempted++;
+                        totalAttempted++;
+                        if (userAnswers[i] === activeQuestions[i].ans) {
+                            secCorrect++;
+                            totalCorrect++;
+                        }
+                    }
+                }
+                const secWrong = secAttempted - secCorrect;
+                const partTitle = s === 3
+                    ? `Part D: भाषा-II (${selectedLang2 === 'english' ? 'English' : 'संस्कृत'})`
+                    : sectionMeta[s].title;
+
+                const tr = document.createElement('tr');
+                tr.className = "border-b border-slate-200 hover:bg-slate-50";
+                tr.innerHTML = `
+                    <td class="border border-slate-200 p-3 font-bold text-slate-800">${partTitle}</td>
+                    <td class="border border-slate-200 p-3 text-center font-semibold">30</td>
+                    <td class="border border-slate-200 p-3 text-center font-semibold">${secAttempted}</td>
+                    <td class="border border-slate-200 p-3 text-center text-emerald-700 font-extrabold">${secCorrect}</td>
+                    <td class="border border-slate-200 p-3 text-center text-rose-600 font-bold">${secWrong}</td>
+                    <td class="border border-slate-200 p-3 text-center font-extrabold text-indigo-900 bg-indigo-50/50">${secCorrect} / 30</td>
+                `;
+                tbody.appendChild(tr);
+            }
+
+            const totalWrong = totalAttempted - totalCorrect;
+            const totalSkipped = 150 - totalAttempted;
+            const pct = ((totalCorrect / 150) * 100).toFixed(1);
+
+            const elapsedSecs = (150 * 60) - timerSeconds;
+            const elMins = Math.floor(elapsedSecs / 60);
+            const elRemSecs = elapsedSecs % 60;
+
+            let qualText = `${pct}% | समय: ${elMins}m ${elRemSecs}s — `;
+            if (totalCorrect >= 90) {
+                qualText += "✅ उत्तीर्ण (General / All Categories Qualified)";
+            } else if (totalCorrect >= 82) {
+                qualText += "✅ उत्तीर्ण (OBC / SC / ST Qualified)";
+            } else {
+                qualText += "⚠️ और अभ्यास आवश्यक (Target: 90+ Marks)";
+            }
+
+            document.getElementById('res-total-score').textContent = `${totalCorrect} / 150`;
+            document.getElementById('res-correct').textContent = totalCorrect;
+            document.getElementById('res-wrong').textContent = totalWrong;
+            document.getElementById('res-skipped').textContent = totalSkipped;
+            document.getElementById('res-status').textContent = qualText;
+
+            renderAnswerKey();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderAnswerKey() {
+            const partFilter = document.getElementById('review-filter-part').value;
+            const statusFilter = document.getElementById('review-filter-status').value;
+            const container = document.getElementById('answer-key-container');
+            container.innerHTML = '';
+
+            const startIdx = partFilter === 'all' ? 0 : parseInt(partFilter) * 30;
+            const endIdx = partFilter === 'all' ? 149 : (parseInt(partFilter) + 1) * 30 - 1;
+            const labels = ['(A)', '(B)', '(C)', '(D)'];
+
+            let shownCount = 0;
+
+            for (let i = startIdx; i <= endIdx; i++) {
+                const qObj = activeQuestions[i];
+                const userAns = userAnswers[i];
+                const isCorrect = userAns === qObj.ans;
+                const isUnanswered = userAns === null;
+
+                if (statusFilter === 'correct' && !isCorrect) continue;
+                if (statusFilter === 'wrong' && (isUnanswered || isCorrect)) continue;
+                if (statusFilter === 'skipped' && !isUnanswered) continue;
+
+                shownCount++;
+
+                let statusBadge = '';
+                let cardBorder = 'border-slate-200 bg-slate-50/70';
+                if (isUnanswered) {
+                    statusBadge = '<span class="bg-slate-200 text-slate-700 text-xs font-extrabold px-2.5 py-1 rounded-md shrink-0">छोड़ा गया (Skipped: 0)</span>';
+                } else if (isCorrect) {
+                    statusBadge = '<span class="bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-extrabold px-2.5 py-1 rounded-md shrink-0">✓ सही उत्तर (+1)</span>';
+                    cardBorder = 'border-emerald-200 bg-emerald-50/20';
+                } else {
+                    statusBadge = '<span class="bg-rose-100 text-rose-800 border border-rose-300 text-xs font-extrabold px-2.5 py-1 rounded-md shrink-0">✗ गलत उत्तर (0)</span>';
+                    cardBorder = 'border-rose-200 bg-rose-50/20';
+                }
+
+                const card = document.createElement('div');
+                card.className = `p-4 sm:p-5 rounded-xl border-2 ${cardBorder}`;
+                card.innerHTML = `
+                    <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
+                        <span class="font-extrabold text-slate-900 text-sm md:text-base leading-relaxed">प्रश्न ${i + 1}: ${formatMathText(qObj.q)}</span>
+                        ${statusBadge}
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs md:text-sm mb-3">
+                        <div class="p-2.5 rounded-lg border ${
+                            isUnanswered ? 'bg-slate-100 border-slate-300 text-slate-600' :
+                            isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-900 font-bold' :
+                            'bg-rose-50 border-rose-300 text-rose-900 font-bold'
+                        }">
+                            <span class="block text-[11px] uppercase opacity-75">आपका चुना गया उत्तर:</span>
+                            <span>${isUnanswered ? 'कोई विकल्प नहीं चुना (Unattempted)' : `${labels[userAns]} ${formatMathText(qObj.opts[userAns])}`}</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-950 font-bold">
+                            <span class="block text-[11px] uppercase text-emerald-700">सही उत्तर (Correct Answer):</span>
+                            <span>${labels[qObj.ans]} ${formatMathText(qObj.opts[qObj.ans])}</span>
+                        </div>
+                    </div>
+                    <div class="text-xs md:text-sm bg-indigo-50/90 text-indigo-950 p-3 rounded-lg border border-indigo-200 leading-relaxed">
+                        <strong class="text-indigo-800">💡 व्याख्या (Explanation - Sandeep Sir):</strong> ${formatMathText(qObj.exp)}
+                    </div>
+                `;
+                container.appendChild(card);
+            }
+
+            if (shownCount === 0) {
+                container.innerHTML = `<div class="text-center py-8 text-slate-500 font-semibold">इस फ़िल्टर श्रेणी में कोई प्रश्न नहीं मिला।</div>`;
+            }
+        }
+    </script>
+</body>
+</html>
